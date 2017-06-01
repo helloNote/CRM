@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>register</title>
+    <link rel="stylesheet" href="lib/css/bootstrap.main.css"/>
+    <link rel="stylesheet" href="css/register.css"/>
+    <link rel="Shortcut Icon" href="img/tupian.png">
+    <script src="lib/js/jquery-1.11.1.min.js"></script>
+    <script src="lib/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<div class="container-fluid wrap">
+    <div class="box">
+
+        <div class="container-fluid wrap">
+            <div class="box">
+                <div class="site-wrapper-inner">
+
+                    <div class="cover-container">
+                        <!------------------------------------>
+                        <div class="container" >
+                            <div class="row">
+                                <div class="col-md-12 text-center">
+                                    <!-- <img src="img/logo.png" alt="logo" class="img1"/>-->
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-5 col-md-offset-3">
+                                            <form class="form_lx">
+                                                <div class="form-group text_lx_1">
+                                                    <label for="Username">用户</label>
+                                                    <input type="text" class="form-control inp" id="Username" placeholder="user">
+                                                    <span class="Prompt1" style="color: red;display: none">请输入6—10位数字！</span>
+                                                </div>
+                                                <div class="form-group text_lx_2">
+                                                    <label for="Password1">密码</label>
+                                                    <input type="password" class="form-control inp" id="Password1" placeholder="Password">
+                                                    <span class="Prompt2" style="color: red;display: none">请输入12位以内的数字和字母！</span>
+                                                </div>
+                                                <div class="form-group text_lx_3">
+                                                    <label for="Password2">确认密码</label>
+                                                    <input type="password" class="form-control inp" id="Password2" placeholder="Password">
+                                                    <span class="Prompt3" style="color: red;display: none">请输入密码一致！</span>
+                                                </div>
+                                                <div class="btn btn-info btn-block btu" id="btu" >注册</div>
+                                                <span class="Prompt4 text_span_lx" style="display: none">注册成功！ <a href="index.html" >点击登录</a></span>
+                                                <span class="Prompt5 text_span_lx_1" style="display: none;color: red;font-size: 23px;margin-top: 15px">用户已经存在！请换用户名称</span>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!------------------------------->
+                        <svg class="curve-shadow" version="1.1" width="100%" height="105" viewBox="0 0 100 100" preserveAspectRatio="none">
+                            <path d="M0 100 C 20 0 50 0 100 100 Z"></path>
+                        </svg>
+                        <svg class="curve"  version="1.1" width="100%" height="90" viewBox="0 0 100 100" preserveAspectRatio="none">
+                            <path d="M0 100 C 20 0 50 0 100 100 Z"></path>
+                        </svg>
+                    </div>
+
+                    <div class="online-container">
+                        <div class="container">
+                            <div class="row main-heading">
+                                <h1 class="">欢迎登陆, <span class="widow">成都市CRM管理系统</span></h1>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script>
+/*============账号和密码失去焦点获得信息=========================*/
+    $("#Username").blur(function(){
+        var reg=/^([+-]?)\d*\.?\d+$/;
+        var user=$("#Username").val();
+        if(user.length>=6&&user.length<=10&&reg.test(user)==true){
+            $(".Prompt1").css({display:"none"})
+            $(".text_lx_1").attr("class","has-success has-feedback form-group")
+        }else{
+            $(".Prompt1").css({display:"inline-block"})
+            $(".Prompt4").css({display:"none"})
+        }
+    });
+    $("#Password1").blur(function(){
+        var reg=/^[A-Za-z0-9_-]+$/
+        var password1=$("#Password1").val();
+        if(reg.test(password1)==true&&password1.length<=12&&password1.length>=6){
+            $(".Prompt2").css({display:"none"})
+            $(".text_lx_2").attr("class","has-success has-feedback form-group")
+        }else{
+            $(".Prompt2").css({display:"inline-block"})
+            $(".Prompt4").css({display:"none"})
+        }
+    });
+    $("#Password2").blur(function(){
+        var password1=$("#Password1").val();
+        var password2=$("#Password2").val();
+        if(password1==password2){
+            $(".Prompt3").css({display:"none"})
+            $(".text_lx_3").attr("class","has-success has-feedback form-group")
+        }else{
+            $(".Prompt3").css({display:"inline-block"})
+            $(".Prompt4").css({display:"none"})
+        }
+    })
+/*====================注册按钮的点击事件===================================*/
+    $("#btu").click(function(){
+        var user=$("#Username").val();
+        var password1=$("#Password1").val();
+        var password2=$("#Password2").val();
+        var obj={
+            user:user,
+            password:password2
+        };
+        if(user==""||password1==""||password2==""){
+            $(".Prompt4").css({display:"none"})
+        }else{
+            /*============发送ajax================*/
+            $.ajax({
+                type:"post",
+                url:"/registerpage",
+                data:obj,
+                success:function(data){
+                    if(data=="用户已经存在"){
+                        $(".Prompt4").css({display:"none"})
+                        $(".Prompt5").css({display:"inline-block"})
+
+                    }else{
+                            $(".Prompt4").css({display:"inline-block"})
+                            $(".Prompt5").css({display:"none"})
+                    }
+
+                }
+            });
+        }
+    });
+
+
+
+
+
+</script>
+</body>
+</html>

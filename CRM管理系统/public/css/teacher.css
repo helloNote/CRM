@@ -1,0 +1,325 @@
+body{
+    margin: 0;
+    padding: 0;
+    color: #333333;
+}
+.containaer{
+     width: 75%;
+     height: 95%;
+     margin: auto;
+     /*background-color: #654515;*/
+ }
+.containerHeaderlc{
+    height: 100%;
+    width: 75%;
+    background-color: #0697DE;
+}
+/*信息*/
+.colstudentlc{
+    position: relative;
+    /*border:5px solid #000;*/
+    height: 100%;
+    /*background-color: #080808;*/
+    /*position: relative;*/
+}
+.colH1lc{
+    width: 100%;
+    height: 15%;
+    margin-top: 20px;
+}
+h1{
+    font-size: 50px;
+    font-weight: bolder;
+    color: #fff;
+    line-height: 120px;
+    text-align: center;
+
+}
+.countentLc{
+    width: 100%;
+    height: 100%;
+    /*display: none;*/
+}
+.formLc{
+    height: 40%;
+}
+.formMessagelc{
+    height: 300px;
+    overflow-y: auto;
+    /*padding-left: -5px;*/
+    /*border: 3px solid #000;*/
+    /*background-color: #112233;*/
+}
+.axax{
+    padding-left: -5px;
+}
+
+.formCountentlc{
+    height: 300px;
+    overflow-y: auto;
+    background: white;
+    /*background-color: #321341;*/
+}
+/*学生表格*/
+table{
+    font-size: 16px;
+}
+li{
+    list-style: none;
+}
+.tubiao{
+    padding-right: 20px;
+}
+.dropdown-menu{
+    width: 100%;
+
+}
+.dropdown-menu > li{
+    width: 100%;
+    text-align: center;
+}
+.headerstudentinflc{
+    width: 20%;
+}
+.headersex{
+    width: 10%;
+}
+.headerclass{
+    width: 20%;
+}
+.headertel{
+    width: 20%;
+}
+.headertel2{
+    width: 30%;
+}
+/*分页*/
+.page{
+    padding-top:20px ;
+}
+.tpleft{
+    padding: 0;
+    color: #f40;
+}
+.fypage > span {
+    line-height: 26px;
+    font-size: 16px;
+}
+.pageinplc{
+    width: 40px;
+    color: #000;
+    text-align: center;
+}
+/*增删查改*/
+button{
+    text-align: center;
+    border: 1px solid #000;
+    box-shadow:1px 1px 1px 0px   #112233;
+}
+.inflc{
+    margin-top: 100px;
+}
+.inflcsecond{
+    margin-top: 80px;
+}
+/*添加页面*/
+.addinf{
+    width: 500px;
+    height: 700px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    margin: auto;
+    z-index: 50;
+    background-color: #eee;
+    padding: 50px 20px;
+    /*border-radius: 5px;*/
+}
+.addinfcont{
+}
+/*添加学生信息*/
+h3{
+    text-align: center;
+}
+.tian{
+    display: none;
+    border-radius: 20px;
+    margin-top: 30px;
+    /*border: 5px solid #FFA500;*/
+}
+.sanc{
+    display: none;
+    border-radius: 20px;
+    /*margin-top: 30px;*/
+    /*border: 5px solid #FFA500;*/
+}
+.xiugai{
+    display: none;
+    border-radius: 20px;
+    margin-top: 30px;
+    /*border: 1px solid #FFA500;*/
+}
+
+.headeradd{
+    margin: 0;
+    border-bottom: 2px solid #fff;
+}
+.col-sm-4,.col-sm-3{
+    line-height: 34px;
+    margin: 0;
+}
+.col-sm-3 > input{
+    width: 20px;
+    height: 20px;
+    margin-top: 7px;
+    margin-right: 7px;
+}
+
+#sexlc{
+    width: 24px;
+    height: 24px;
+}
+.addinflc{
+    margin:0;
+}
+.zttblc{
+    line-height: 32px;
+    font-size: 28px;
+}
+.addinflc{
+    margin-top: 30px;
+}
+/*.rowBodylc{*/
+    /*height: 5vh;*/
+    /*width: 100%;*/
+    /*background-color: #2b542c;*/
+/*}*/
+/*名字*/
+.xinmin{
+    position: relative;
+}
+.zqm{
+    display: none;
+    position: absolute;
+    color: red;
+}
+/*科目*/
+.ssk{
+    position: relative;
+}
+.zqk{
+    display: none;
+    position: absolute;
+    color: red;
+}
+
+/*班级*/
+.sdb{
+    position: relative;
+}
+.zqb{
+    display: none;
+    position: absolute;
+    color: red;
+}
+/*电话*/
+.lxd{
+    position: relative;
+}
+.zqd{
+    display: none;
+    position: absolute;
+    color: red;
+}
+
+/*改号码*/
+.ghm{
+    position: relative;
+}
+.zqg{
+    display: none;
+    position: absolute;
+    color: red;
+}
+#jsxm{
+    font-size: 20px;
+    color: #ac2925;
+    width: 180px;
+}
+
+#jsxb{
+    font-size: 20px;
+    color: #ac2925;
+    width: 180px;
+}
+#jskm{
+    font-size: 20px;
+    color: #ac2925;
+    width: 180px;
+}
+.dix{
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    padding-left: 10px;
+}
+.dix:hover{
+    background:#FFA500 ;
+}
+
+.dex{
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    padding-left: 10px;
+}
+.dex:hover{
+    background:#FFA500 ;
+}
+/*.tr_wq{
+  position: relative;
+    top: 10px;
+}*/
+.table-hover_w_q tr{
+    cursor: pointer;
+}
+.trlc:hover{
+    background:#FFA500 ;
+}
+
+table tr th,td{
+    font-size: 14px;
+    text-align: center;
+}
+.cur_lx{
+    cursor: pointer;
+}
+.h4{
+    color: #333333;
+    font-size: 17px;
+}
+.btn-warning{
+    background-color: #CC9966;
+    color: white;
+    border: none;
+}
+
+/*aleat  弹框*/
+
+.alert_lx{
+    width: 400px;
+    height: 150px;
+    position: absolute;
+    margin: auto;
+    display: none;
+    text-align: center;
+    z-index: 999;
+    /*box-shadow: 10px 10px 5px #888888;*/
+}
+.txt_lx{
+    font-size: 20px;
+    width: 100%;
+    line-height: 100px;
+}

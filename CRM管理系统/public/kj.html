@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>page</title>
+    <link rel="stylesheet" href="lib/css/bootstrap.main.css"/>
+    <link rel="stylesheet" href="css/page.css"/>
+    <link rel="Shortcut Icon" href="img/tupian.png">
+    <script src="lib/js/jquery-1.11.1.min.js"></script>
+    <script src="lib/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="img_lx">
+    <div class="box_lx">
+        <!-- ===============content开始===============-->
+        <div class="container-fluid wrap_lx">
+            <div class="row" style="height: 100%;width: 100%">
+
+                <!-----------------left开始------------------------->
+                <div class="col-md-2" style="height: 100%" >
+
+                    <div class="row" style="height: 19%;background: #A58B79">
+                        <div class="col-md-12 text-center">
+                            <span class="pic_lx"></span>
+                            <p class="text_lx">苦尽甘来的味道</p>
+                        </div>
+                    </div>
+
+                    <div class="row" style="height: 62%;background: white">
+                        <div class="col-md-12 text-center">
+
+                            <div class="panel-group mean_lx" id="accordion">
+                                <div class="panel panel-default mean_1_lx">
+                                    <div class="panel-heading G_L cur_lx" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                        <span class="glyphicon glyphicon-education icon"></span>
+                                        <h4 class="h4">School Administration</h4>
+                                    </div>
+                                    <div id="collapseOne" class="panel-collapse collapse fade">
+                                        <div class="panel-body">
+                                            <ul class="list-unstyled text_1_lx">
+                                                <li><a id="G_L_1">学校活动</a></li>
+                                                <li><a id="G_L_2">学校管理</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default mean_1_lx">
+                                    <div class="panel-heading cur_lx" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                        <span class="glyphicon glyphicon-user icon"></span>
+                                        <h4 class="h4">User Management</h4>
+                                    </div>
+                                    <div id="collapseTwo" class="panel-collapse collapse list_1_1_lx fade">
+                                        <div class="panel-body">
+                                            <ul class="list-unstyled text_1_lx">
+                                                <li><a>老师管理</a></li>
+                                                <li><a>学生管理</a></li>
+                                                <li><a class="l_s_l">班级管理</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default mean_1_lx">
+                                    <div class="panel-heading cur_lx" data-toggle="collapse"data-parent="#accordion"href="#collapseThree">
+                                        <span class="glyphicon glyphicon-file icon"></span>
+                                        <h4 class="h4">Data Management</h4>
+                                    </div>
+                                    <div id="collapseThree" class="panel-collapse collapse fade">
+                                        <div class="panel-body">
+                                            <ul class="list-unstyled text_1_lx">
+                                                <li><a>人员管理</a></li>
+                                                <li><a>职位管理</a></li>
+                                                <li><a>部门管理</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default mean_1_lx">
+                                    <div class="panel-heading list_1_lx cur_lx" data-toggle="collapse"data-parent="#accordion"href="#collapseFour">
+                                        <span class="glyphicon glyphicon-erase icon"></span>
+                                        <h4 class="h4">System Information</h4>
+                                    </div>
+                                    <div id="collapseFour" class="panel-collapse collapse fade">
+                                        <div class="panel-body">
+                                            <ul class="list-unstyled text_1_lx text-center">
+                                                <li><a>日志一览</a></li>
+                                                <li><a>信息一览</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row"style="height: 19%;background:#A58B79">
+                        <div class="col-md-12"></div>
+                    </div>
+                </div>
+                <!-----------------left结束------------------------->
+
+                <!-----------------right开始-------------------------------------->
+                <div class="col-md-10" style="height: 100%"  id="mainPage">
+                    <div class="row"style="height: 5%;">
+                        <div class="col-12" >
+                            <div class="box_lx_2">
+                                <span class="user">您好！<label id="name_lx"></label></span>
+                                <button class="log_off_lx" data-toggle="modal" data-target="#myModal">注销</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--------提示框开始------------->
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header header_lx">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">注意</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <span>是否确认注销用户？</span>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                                    <button type="button" class="btn btn-primary yes">Yes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--------提示框结束---------------->
+                    <!--------提示框开始------------->
+
+
+
+                    <!--------提示框结束---------------->
+                    <div class="row" style="height: 65%;border: 1px solid white">
+                        <div class="col-12">
+                        <!--    <div class="text2_lx">
+                                <h2 style="color: white;font-size: 25px;" class="text-center">CRM管理系统</h2>
+                                <p>CRM(Customer Relationship Management)&#45;&#45;客户关系管理，是一种以"客户关系一对一理论"为基础，旨在改善企业与客户之间关系的新型管理机制。客户关系管理的定义是：企业为提高核心竞争力，利用相应的信息技术以及互联网技术来协调企业与顾客间在销售、营销和服务上的交互，从而提升其管理方式，向客户提供创新式的个性化的客户交互和服务的过程。其最终目标是吸引新客户、保留老客户以及将已有客户转为忠实客户，增加市场份额。</p>
+                                <p>最早发展客户关系管理的国家是美国，这个概念最初由Gartner Group提出来，在1980年初便有所谓的“接触管理”(Contact Management)，即专门收集客户与公司联系的所有信息，到1990年则演变成包括电话服务中心支持资料分析的客户关怀（Customer care）。开始在企业电子商务中流行。</p>
+                                <p>CRM系统的宗旨是：为了满足每个客户的特殊需求，同每个客户建立联系，通过同客户的联系来了解客户的不同需求，并在此基础上进行"一对一"个性化服务。通常CRM包括销售管理、市场营销管理、客户服务系统以及呼叫中心等方面。</p>
+                                <p>“以客户为中心”，提高客户满意度，培养、维持客户忠诚度，在今天这个电子商务时代显得日益重要。客户关系管理正是改善企业与客户之间关系的新型管理机制，越来越多的企业运用CRM来增加收入、优化赢利性、提高客户满意度。</p>
+                                <p> 统计数据表明，2008年中小企业CRM市场的规模已达8亿美元。在随后五年中，这一市场将快速增长至18亿美元，在整个CRM市场中占比达30%以上。[1]</p>
+                                <p> CRM系统主要包含传统CRM系统和在线CRM系统。</p>
+                            </div>-->
+                        </div>
+                    </div>
+                    <div class="row" style="height: 30%;">
+                        <div class="col-12">
+                            <div class="ipad-with-video hidden-xs">
+                                <a href="https://www.youtube.com/embed/TzIhH_V2mEU?rel=0" data-width="100%" data-toggle="lightbox" class="video--wrapper fresco" data-fresco-options="rel: 0">
+                                    <video width="598" height="290" controls="false" autoplay="autoplay" loop="true" >
+                                        <source src="video/desk-overview-loop.mp4" type="video/mp4">
+                                        Sorry, this video is not supported.
+                                    </video>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-----------------right结束-------------------------------------->
+            </div>
+        </div>
+        <!-- ===============content结束===============-->
+    </div>
+</div>
+<script>
+    $(".yes").click(function(){
+        window.location.href="index.html";
+    });
+/*
+
+    $("#name_lx").text(localStorage.user);
+    /!*============判断用户是否存在，不存在弹出警告框===============*!/
+    var name=$("#name_lx").text();
+    var dom = '                        <div id="myAlert" class="alert alert-danger" > ' +
+            '<a href="#" class="close" data-dismiss="alert" >&times;</a><br> ' +
+            '<strong class="txt_lx">亲，检查到您的用户没有登录，请登录!</strong><br/> ' +
+            '<button class="btn btn-danger btn_lx">Login</button> ' +
+            '</div>';
+    if(name==""){
+        $(".list_1_lx").click(function() {
+            var dom2 = $("#myAlert").length;
+            if (dom2 == 0) {
+                $('#mainPage').append(dom);
+                $(".btn_lx").click(function(){
+                    window.location.href="index.html";
+                });
+            }
+        })
+        $(".G_L").click(function(){
+            var dom2 = $("#myAlert").length;
+            if(dom2==0){
+                $('#mainPage').append(dom);
+                $(".btn_lx").click(function(){
+                    window.location.href="index.html";
+                });
+            }
+        });
+
+    }else{
+        $(".list_1_lx").click(function(){
+            window.location.href="system.html";
+        });
+        $(".G_L").click(function(){
+            window.location.href="G_L1.html";
+        });
+        /!*  $(".L_S_L").click(function(){
+         window.location.href="lsl_1.html";
+         });*!/
+
+    }*/
+    /*=====================================================*/
+</script>
+</body>
+</html>

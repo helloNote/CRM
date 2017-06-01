@@ -1,0 +1,40 @@
+/*
+Navicat MySQL Data Transfer
+
+Source Server         : localhost_3306
+Source Server Version : 50635
+Source Host           : localhost:3306
+Source Database       : test
+
+Target Server Type    : MYSQL
+Target Server Version : 50635
+File Encoding         : 65001
+
+Date: 2017-04-07 16:22:25
+*/
+
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for information
+-- ----------------------------
+DROP TABLE IF EXISTS `information`;
+CREATE TABLE `information` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `日志内容` char(100) NOT NULL,
+  `日期` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of information
+-- ----------------------------
+INSERT INTO `information` VALUES ('3', '用户aaa登陆成功', '2017-04-26 13:47:49');
+INSERT INTO `information` VALUES ('4', '用户bbb添加了xx学生', '2017-04-20 15:35:19');
+INSERT INTO `information` VALUES ('5', 'aaa', '0000-00-00 00:00:00');
+INSERT INTO `information` VALUES ('6', 'sssssss', '2017-04-19 09:54:36');
+INSERT INTO `information` VALUES ('7', 'sagdfsdg', '2017-04-18 09:54:52');
+INSERT INTO `information` VALUES ('8', '用户lsl添加la学生', '2017-04-18 10:37:17');
+INSERT INTO `information` VALUES ('9', 'as', '2017-04-18 13:20:54');
+INSERT INTO `information` VALUES ('10', 'sd', '2017-04-11 13:21:01');
+INSERT INTO `information` VALUES ('11', 'gh', '2017-04-04 13:48:33');

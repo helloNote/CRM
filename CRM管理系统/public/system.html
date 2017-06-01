@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>system</title>
+    <link rel="stylesheet" href="lib/css/bootstrap.main.css"/>
+  <!--  <link rel="stylesheet" href="css/css.css"/>-->
+    <link rel="stylesheet" href="css/system.css"/>
+    <link rel="Shortcut Icon" href="img/tupian.png">
+    <script src="lib/js/jquery-1.11.1.min.js"></script>
+    <script src="lib/js/bootstrap.min.js"></script>
+    <script src="js/Ajax.js"></script>
+</head>
+<body>
+<div class="img_lx">
+    <div class="box_lx">
+        <!-- ===============content开始===============-->
+        <div class="container-fluid wrap_lx">
+            <div class="row" style="height: 100%;width: 100%">
+
+                <!-----------------left开始------------------------->
+                <div class="col-md-2" style="height: 100%" >
+
+                    <div class="row" style="height: 20%;background: #A58B79">
+                        <div class="col-md-12 text-center">
+                            <span class="pic_lx"></span>
+                            <p class="text_lx">苦尽甘来的味道</p>
+                        </div>
+                    </div>
+
+                    <div class="row" style="height: 60%;background: white">
+                        <div class="col-md-12 text-center">
+
+                            <div class="panel-group mean_lx" id="accordion">
+                                <div class="panel panel-default mean_1_lx">
+                                    <div class="panel-heading G_L cur_lx" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                        <span class="glyphicon glyphicon-education icon"></span>
+                                        <h4 class="h4">School Administration</h4>
+                                    </div>
+                                    <div id="collapseOne" class="panel-collapse collapse fade">
+                                        <div class="panel-body">
+                                            <ul class="list-unstyled text_1_lx">
+                                                <li><a id="G_L_1">学校活动</a></li>
+                                                <li><a id="G_L_2">学校管理</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default mean_1_lx">
+                                    <div class="panel-heading W_Q cur_lx" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                        <span class="glyphicon glyphicon-user icon"></span>
+                                        <h4 class="h4">User Management</h4>
+                                    </div>
+                                    <div id="collapseTwo" class="panel-collapse collapse list_1_1_lx fade">
+                                        <div class="panel-body">
+                                            <ul class="list-unstyled text_1_lx">
+                                                <li><a>老师管理</a></li>
+                                                <li><a>学生管理</a></li>
+                                                <li><a>班级管理</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default mean_1_lx">
+                                    <div class="panel-heading w_y_b cur_lx" data-toggle="collapse"data-parent="#accordion"href="#collapseThree">
+                                        <span class="glyphicon glyphicon-file icon"></span>
+                                        <h4 class="h4">Data Management</h4>
+                                    </div>
+                                    <div id="collapseThree" class="panel-collapse collapse fade">
+                                        <div class="panel-body">
+                                            <ul class="list-unstyled text_1_lx">
+                                                <li><a id="wyb1">人员管理</a></li>
+                                                <li><a id="wyb2">职位管理</a></li>
+                                                <li><a id="wyb3">部门管理</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default mean_1_lx">
+                                    <div class="panel-heading list_1_lx cur_lx" data-toggle="collapse"data-parent="#accordion"href="#collapseFour">
+                                        <span class="glyphicon glyphicon-erase icon"></span>
+                                        <h4 class="h4">System Information</h4>
+                                    </div>
+                                    <div id="collapseFour" class="panel-collapse collapse fade in">
+                                        <div class="panel-body">
+                                            <ul class="list-unstyled text_1_lx text-center">
+                                                <li><a id="information1" onclick="rzyl()">日志一览</a></li>
+                                                <li><a id="information2" onclick="xxyl()">信息一览</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row"style="height: 20%;background:#A58B79">
+                        <div class="col-md-12"></div>
+                    </div>
+                </div>
+                <!-----------------left结束------------------------->
+
+                <!-----------------right开始-------------------------------------->
+                <div class="col-md-10" style="height: 100%">
+                    <div class="row"style="height: 5%;">
+                        <div class="col-12" >
+                            <div class="box_lx_2">
+                                <span class="user">您好！<label id="name_lx"></label></span>
+                                <button class="log_off_lx" data-toggle="modal" data-target="#myModal">注销</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--------提示框开始------------->
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header header_lx">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">注意</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <span>是否确认注销用户？</span>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                                    <button type="button" class="btn btn-primary yes">Yes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--------提示框结束---------------->
+
+                    <div class="row" style="height: 65%;padding: 0 200px 0 200px">
+                        <div class="col-12">
+                         <!--  //系统信息-->
+
+                      <!--      <div class=" row" id="xitongxinxi">
+                                <h1>系统信息</h1>
+                                <p class="p1">
+                                    “系统信息”工具收集系统信息（如计算机中安装的设备或计算机中加载的设备驱动程序），并提供用于显示关联的系统主题的菜单。 您可使用该工具来诊断计算机问题。 例如，如果您遇到显示问题，则可使用该工具来确定计算机上安装的显示卡并查看它的驱动程序的状况。
+                                </p>
+                                <p class="p1">通过“系统信息”工具还可访问一些工具，可以使用这些工具对计算机进行疑难解答。 （操作：菜单栏中的工具选项，包括有网络诊断、系统还原等等）</p>
+                                <p class="p1">如果您从 Windows Update Web 站点安装了某个更新，但它无法达到您的预期目标，请通过从“系统信息”中的工具菜单中运行“更新向导卸载”来恢复原始文件。 如果您的计算机昨天还正常工作，但是今天却不能，请通过从“系统信息”工具中的工具菜单中运行“系统还原”工具来尝试恢复昨天的配置文件。</p>
+                            </div>-->
+                          <!--  information 日志一览-->
+                            <div class="information row" id="one">
+                                <div class="col-md-12 col-xs-12">
+                                    <div class="row">
+                                        <div class="col-md-12 col-xs-12">
+                                            <h2 class="text-center" style="color: white;margin: 40px 0 30px 0">日志信息</h2>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12 col-xs-12">
+                                            <table class="table table-bordered tableone" id="tablelsl"  datapage = 0 ></table>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12  text-center col-xs-12">
+                                            <div class="btnlsl"></div>
+                                            <button type="button" class="btn1">
+                                                <span class="glyphicon glyphicon-chevron-left "  ></span>
+                                            </button>
+                                            <button type="button" class="btn3">
+                                                <span class="glyphicon glyphicon-chevron-right "  ></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12 col-xs-12">
+                                        <div class="col-md-3 col-md-offset-9 col-xs-3 col-xs-offset-9" style="margin-top:40px">
+                                            <h3 class="text-center" style="color: white; ">查询日志信息</h3>
+                                            开始日期：<input type="date" id="start" /><br/>
+                                            结束日期：<input type="date" id="end"/>
+                                            <button class="btn4 text-center btn btn-warning" onclick="selectdata()">查找</button>
+                                            <!--查询的弹框-->
+                                            <div class="tiankuang">
+                                                <table  width="400" border="1" cellspacing="0" cellpadding="0" class="rizi_lx" ></table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                          <!-- information 日志一览
+                         信息提示-->
+                            <div class="information2 row" id="two">
+                                <div class="col-md-12 col-xs-12">
+                                    <div class="row">
+                                        <div class="col-md-12 col-xs-12">
+                                            <h2 class="text-center"style="color: white;margin: 40px 0 30px 0">信息提示</h2>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12 col-xs-12">
+                                            <table class="table table-bordered tableone" id="tablelsl2"  datapage = 0></table>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row">
+                                        <div class="col-md-12  text-center col-xs-12">
+                                            <div class="btnlsl"></div>
+                                            <button type="button" class="btn6">
+                                                <span class="glyphicon glyphicon-chevron-left "  ></span>
+                                            </button>
+                                            <button type="button" class="btn7">
+                                                <span class="glyphicon glyphicon-chevron-right "  ></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-md-12 col-xs-12">
+                                        <div class="col-md-3 col-md-offset-9 col-xs-3 col-xs-offset-9" style="margin-top: 40px">
+                                            <h3 style="color: white">查询信息一览</h3>
+                                            开始日期：<input type="date" id="start1"/>
+                                            结束日期：<input type="date" id="end1"/>
+                                            <button class="btn10 text-center btn btn-warning" onclick="selectdata1()">查找</button>
+                                          <!--  &lt;!&ndash; 查询的弹框&ndash;&gt;-->
+                                            <div class="tiankuang2">
+                                                <table  width="400" border="1" cellspacing="0" cellpadding="0" class="info_lx">
+
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="height: 30%;">
+                        <div class="col-12">
+                            <div class="ipad-with-video hidden-xs ">
+                                <img src="img/tu7998_8.jpg" alt=""/>
+                                <!--  <a href="https://www.youtube.com/embed/TzIhH_V2mEU?rel=0" data-width="100%" data-toggle="lightbox" class="video&#45;&#45;wrapper fresco" data-fresco-options="rel: 0">
+                                      <video width="598" height="290" controls="false" autoplay="autoplay" loop="true" >
+                                          <source src="https://webassets.desk.com/assets/videos/desk-overview-loop.mp4" type="video/mp4">
+                                          Sorry, this video is not supported.
+                                      </video>
+                                  </a>
+                              </div>-->
+                            </div>
+                        </div>
+                    </div>
+                    <!-----------------right结束-------------------------------------->
+                </div>
+            </div>
+            <!-- ===============content结束===============-->
+        </div>
+    </div>
+</div>
+
+<!--<div class="col-md-10 col-md-offset-1 col-xs-12 box_lx ">
+
+
+</div>-->
+<script>
+/*    $(".yes").click(function(){
+        window.location.href="index.html";
+    });
+    $(".G_L").click(function(){
+        window.location.href="G_L1.html";
+    });
+    $(".W_Q").click(function(){
+        window.location.href="W_Q1.html";
+    });*/
+    $("#name_lx").text(localStorage.user);
+    //  系统信息
+    $("#xitong").on("click",function(){
+        $("#xitongxinxi").show();
+        $("#one").hide();
+        $("#two").hide();
+    })
+    //    显示隐藏information
+    $("#information1").on("click",function(){
+        $("#xitongxinxi").hide();
+        $("#one").show();
+        $("#two").hide();
+    })
+    $("#information2").on("click",function(){
+        $("#two").show();
+        $("#xitongxinxi").hide();
+        $("#one").hide();
+
+    })
+   // <!-- 查找的弹出框-->
+    $(".btn4").click(function(){
+        $(".tiankuang").show();
+    })
+    $(".btn10").click(function(){
+        $(".tiankuang2").show();
+    })
+
+
+</script>
+<script src="js/fangfa_lx.js"></script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+body{
+    color: #333333;
+}
+.fluidBoxlc{
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    background-color: #0697DE;
+}
+
+.rowToplc{
+    padding: 0;
+    margin: 0;
+    height: 5%;
+    width: 100%;
+    background-color: #2b542c;
+}
+.containaer{
+    width: 75%;
+    height: 95%;
+    margin: auto;
+    background-color: #654515;
+}
+.containerHeaderlc{
+    height: 100%;
+    width: 75%;
+    background-color: #0697DE;
+}
+/*信息*/
+.colstudentlc{
+    position: relative;
+    height: 100%;
+}
+.colH1lc{
+    width: 100%;
+    height: 20%;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+/*h1{
+    font-size: 50px;
+    font-weight: bolder;
+    color: #fff;
+    line-height: 120px;
+    text-align: center;
+
+}*/
+.countentLc{
+    width: 100%;
+    height: 100%;
+}
+.formLc{
+    height: 300px;
+}
+.formMessagelc{
+    height: 100%;
+    padding-left: -5px;
+    border: 1px solid #DDDDDD;
+    background: white;
+
+}
+.formCountentlc{
+    height: 100%;
+    background: white;
+    /*overflow-y: auto;*/
+}
+/*学生表格*/
+table{
+    font-size: 16px;
+}
+li{
+    list-style: none;
+}
+.tubiao{
+    padding-right: 30px;
+}
+
+/*.dropdown{*/
+    /*height:80px;*/
+/*}*/
+.dropdown-menu{
+    width: 100%;
+}
+.dropdown-menu > li{
+    width: 100%;
+    height:40px;
+    text-align: center;
+    cursor: pointer;
+    line-height: 40px;
+}
+.li_lsl:hover{
+    background:#FFA500 ;
+}
+.headerstudentinflc{
+    width: 25%;
+
+}
+.headersex{
+    width: 20%;
+
+}
+.headerclass{
+    width: 25%;
+
+}
+.headertel{
+    width: 30%;
+}
+td{
+    height:33px;
+}
+/*添加班委*/
+.modal-footer_lsl{
+    position: relative;
+    left: 350px;
+}
+.addbjbox_1{
+    margin-left:10px;
+}
+.addbanji,.dropbanji{
+    float:left;
+    margin-top:70px;
+    margin-right: 50px;
+    position: relative;
+
+}
+.addbjbox{
+    width:300px;
+    height:300px;
+    position: absolute;
+    top:360px;
+    left:200px;
+    color:#000;
+    display: none;
+    background: #eee;
+    /*border:1px solid #fff;*/
+    border-radius: 15px;
+}
+/*tbody .tr > th{
+ padding-top: 10px;
+    background: yellow;
+    border: none;
+    line-height: 40px;
+}*/
+.tr_lsl:hover{
+    background:#FFA500 ;
+}
+h4{
+    text-align: center;
+    margin-top:15px;
+}
+.addbjbox_1{
+    /*margin-left:10px;*/
+}
+.label1{
+    /*margin-left:-25px;*/
+}
+.put1{
+    outline: none;
+}
+.put2{
+    width:174px;
+    height: 26px;
+    margin-top:10px;
+}
+.as{
+   /* float:left;*/
+    margin-right:20px;
+    margin-top:50px;
+}
+.dropbanwei{
+    width:300px;
+    height:300px;
+    position: absolute;
+    top:360px;
+    left:200px;
+    color:#000;
+    display: none;
+    background:#eee;
+    border-radius: 15px;
+}
+h5{
+    text-align: center;
+    margin-top:50px;
+}
+
+.btnbtn2{
+    margin-top:60px;
+}
+.ad{
+    margin-left: 50px;
+}
+
+.af{
+    margin-left: 70px;
+}
+/*tr,td{
+    border:1px solid #fff;
+}*/
+
+.dropdown{
+    height:50px;
+}
+.tangkuang1{
+    width:352px;
+    height:129px;
+    position: absolute;
+    top:0px;
+    left:30%;
+    background: #F2DEDE;
+    border-radius: 2px;
+    color:#A94442;
+    display: none;
+    font-size:20px;
+    font-weight: 900;
+}
+.tishi{
+    margin-top:45px;
+}
+.btn-warning{
+    background-color: #CC9966;
+    color: white;
+    border: none;
+}
+.h4{
+    color: #333333;
+    font-size: 17px;
+}
+#banjitable_lsl{
+    width:100%;
+    margin-top:20px;
+}
+tr,td,th{
+
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+}

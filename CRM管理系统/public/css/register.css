@@ -1,0 +1,101 @@
+.wrap{
+   /* background: url("../img/wood-bg--md.jpg")no-repeat;*/
+    height: 100vh;
+    background-size:cover;
+}
+.box{
+/*    width: 500px;
+    height: 500px;
+    background: rgba(255,255,255,0.3);*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+.img1{
+   position: relative;
+    left: 120px;
+    width: 600px;
+    margin-top: 20px;
+}
+.form_lx{
+    margin-top: 140px;
+    background: white;
+    padding: 70px;
+    border-radius: 10px;
+}
+.inp{
+    background: rgba(12,58,92,0.2);
+    color: white;
+}
+.inp::-webkit-input-placeholder{
+    color: white;
+}
+.btu{
+   position: relative;
+    top: 10px;
+}
+label{
+    color: #363B4F;
+}
+.text_span_lx{
+    color: green;
+    font-size: 25px;
+    margin-left: 40px ;
+    margin-top: 20px;
+    font-weight: bold;
+    display: inline-block;
+}
+.text_span_lx_1{
+    margin-left: 8px;
+}
+.curve-shadow{
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 120%;
+    opacity: 0.2;
+    animation: slideIn 2s forwards;
+    animation-delay: 0.5s;
+}
+@keyframes slideIn {
+    0% {
+        left: 0%;
+    }
+    100% {
+        left: -20%;
+    }
+}
+svg:not(:root){
+    overflow: hidden;
+}
+.curve{
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 120%;
+    animation: slideIn 2s forwards;
+}
+.curve path{
+    fill: #FDFDFD;
+}
+.cover-container{
+    padding-top: 30px;
+    min-height: 800px;
+    width: 100%;
+    z-index: 100;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    background: #142333;
+    background-image: url(../img/background.jpg);
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    animation: fadeIn 1s forwards;
+}

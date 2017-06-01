@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>学校管理</title>
+    <link rel="stylesheet" href="lib/css/bootstrap.main.css"/>
+    <link rel="stylesheet" href="css/page.css"/>
+    <link rel="Shortcut Icon" href="img/tupian.png">
+    <link rel="stylesheet" href="css/wyb.css"/>
+    <script src="lib/js/jquery-1.11.1.min.js"></script>
+    <script src="lib/js/bootstrap.min.js"></script>
+    <style>
+        .alert_lx_wyb{
+            width: 400px;
+            height: 150px;
+            position: absolute;
+            margin: auto;
+            border-radius: 15px;
+        }
+        .txt_lx_wyb{
+            font-size: 20px;
+            display: inline-block;
+            width: 100%;
+            line-height: 100px;
+        }
+        .btn_lx{
+            position: absolute;
+            right: 30px;
+            bottom: 20px;
+        }
+    </style>
+
+</head>
+<body>
+<div class="img_lx">
+    <div class="box_lx">
+        <!-- ===============content开始===============-->
+        <div class="container-fluid wrap_lx">
+            <div class="row" style="height: 100%;width: 100%">
+
+                <!-----------------left开始------------------------->
+                <div class="col-md-2" style="height: 100%" >
+
+                    <div class="row" style="height:19%;background: #A58B79">
+                        <div class="col-md-12 text-center">
+                            <span class="pic_lx"></span>
+                            <p class="text_lx">苦尽甘来的味道</p>
+                        </div>
+                    </div>
+
+                    <div class="row" style="height: 62%;background: white">
+                        <div class="col-md-12 text-center">
+
+                            <div class="panel-group mean_lx" id="accordion">
+                                <div class="panel panel-default mean_1_lx">
+                                    <div class="panel-heading G_L cur_lx" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                        <span class="glyphicon glyphicon-education icon"></span>
+                                        <h4 class="h4">School Administration</h4>
+                                    </div>
+                                    <div id="collapseOne" class="panel-collapse collapse fade ">
+                                        <div class="panel-body">
+                                            <ul class="list-unstyled text_1_lx">
+                                                <li><a id="G_L_1">学校活动</a></li>
+                                                <li><a id="G_L_2">学校管理</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default mean_1_lx">
+                                    <div class="panel-heading W_Q cur_lx" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                        <span class="glyphicon glyphicon-user icon"></span>
+                                        <h4 class="h4">User Management</h4>
+                                    </div>
+                                    <div id="collapseTwo" class="panel-collapse collapse list_1_1_lx fade">
+                                        <div class="panel-body">
+                                            <ul class="list-unstyled text_1_lx">
+                                                <li><a>老师管理</a></li>
+                                                <li><a>学生管理</a></li>
+                                                <li><a>班级管理</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default mean_1_lx">
+                                    <div class="panel-heading list_1_lx cur_lx" data-toggle="collapse"data-parent="#accordion"href="#collapseThree">
+                                        <span class="glyphicon glyphicon-file icon"></span>
+                                        <h4 class="h4">Data Management</h4>
+                                    </div>
+                                    <div id="collapseThree" class="panel-collapse collapse fade in">
+                                        <div class="panel-body">
+                                            <ul class="list-unstyled text_1_lx">
+                                                <li><a id="wyb1">人员管理</a></li>
+                                                <li><a id="wyb2">职位管理</a></li>
+                                                <li><a id="wyb3">部门管理</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default mean_1_lx">
+                                    <div class="panel-heading list_1_lx cur_lx" data-toggle="collapse"data-parent="#accordion"href="#collapseFour">
+                                        <span class="glyphicon glyphicon-erase icon"></span>
+                                        <h4 class="h4">System Information</h4>
+                                    </div>
+                                    <div id="collapseFour" class="panel-collapse collapse fade">
+                                        <div class="panel-body">
+                                            <ul class="list-unstyled text_1_lx text-center">
+                                                <li><a id="information1" onclick="rzyl()">日志一览</a></li>
+                                                <li><a id="information2" onclick="xxyl()">信息一览</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row"style="height: 19%;background:#A58B79">
+                        <div class="col-md-12"></div>
+                    </div>
+                </div>
+                <!-----------------left结束------------------------->
+
+                <!-----------------right开始-------------------------------------->
+                <div class="col-md-10" style="height: 100%">
+                    <div class="row"style="height: 5%;">
+                        <div class="col-12" >
+                            <div class="box_lx_2">
+                                <span class="user">您好！<label id="name_lx"></label></span>
+                                <button class="log_off_lx" data-toggle="modal" data-target="#myModal">注销</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--------提示框开始------------->
+                    <!-- Modal -->
+                    <div id="myAlert" class="alert alert-danger alert_lx_wyb" style="display: none;" >
+                        <!-- <a href="#" class="close" data-dismiss="alert" >&times;</a><br>-->
+                        <strong class="txt_lx_wyb text-center">文字</strong><br/>
+                        <!--     <button class="btn btn-info btn_lx">确定</button>-->
+                    </div>
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header header_lx">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">注意</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <span>是否确认注销用户？</span>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                                    <button type="button" class="btn btn-primary yes">Yes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--------提示框结束---------------->
+
+                    <div class="row" style="height: 65%;padding: 0 200px 0 200px">
+
+                    <!------------------------------------>
+                        <div class="col-md-1"></div>
+                        <div class="col-md-10 list2_lx col-xs-9" style="position: relative" >
+                            <!--职位管理的隐藏界面1开始-->
+                            <div class="div_yingcang_wyb_1 container-fluid" id="div_yingcang_wyb_guanli_1" style="margin: 0 auto;width: 70%">
+                                <h3>添加新职位</h3>
+                                <hr style="border: 1px solid #fff"/>
+                                <div class="form-group text-left" style="margin-left: 30%;">
+
+                                    <label for="tet_guanli_wyb_1" style="margin-right: 15px">职位名称</label>
+                                    <input type="text" id="tet_guanli_wyb_1" style="width: 240px;margin-right: 30px"/>
+                                </div>
+                                <div class="form-group text-left" style="margin-left: 30%">
+                                    <label for="tet_guanli_wyb_2" style="margin-right: 15px">职位描述</label>
+                                    <textarea name="" id="tet_guanli_wyb_2" cols="30" rows="10" style="margin-right: 30px"></textarea>
+                                </div>
+                                <div class="form-group guanli_input_wyb" >
+                                    <input type="checkbox" class="input1" name="guanli"/>查询权限
+                                    <input type="checkbox" class="input2" name="guanli"/>考核权限
+                                    <input type="checkbox" class="input3" name="guanli"/>销售统计
+                                    <br/>
+                                    <input type="checkbox"  class="input4"name="guanli"/>权限管理
+                                    <input type="checkbox"  class="input5"name="guanli"/>后台管理
+                                </div>
+                                <button class="btn btn-default" style="margin-right:10px " id="tianjiazhiweiguanli">添加</button>
+                                <button class="btn btn-default" style="margin-left:10px " id="btnyincang_5">取消</button>
+                            </div>
+
+
+                            <!--职位管理的隐藏界面1结束-->
+
+
+
+                            <!--职位管理隐藏界面2开始-->
+                            <div class="div_yingcang_wyb_1 container-fluid" id="div_yingcang_wyb_guanli_2" style="margin: 0 auto;width: 70%">
+                                <h3 >修改职位权限</h3>
+                                <hr style="border: 1px solid #fff"/>
+                                <div class="form-group text-left" style="margin-left: 30%;">
+
+                                    <label for="tet_guanli_wyb_1" style="margin-right: 15px">职位名称</label>
+                                    <input type="text" id="tet_guanli_wyb_3" style="width: 240px;margin-right: 30px" disabled/>
+                                </div>
+                                <div class="form-group text-left" style="margin-left: 30%">
+                                    <label for="tet_guanli_wyb_2" style="margin-right: 15px">职位描述</label>
+                                    <textarea name="" id="tet_guanli_wyb_4" cols="30" rows="10" disabled style="margin-right: 30px"></textarea>
+                                </div>
+                                <div class="form-group guanli_input_wyb" >
+                                    <input type="checkbox" class="input6" name="guanli"/>查询权限
+                                    <input type="checkbox" class="input7" name="guanli"/>考核权限
+                                    <input type="checkbox" class="input8" name="guanli"/>销售统计
+                                    <br/>
+                                    <input type="checkbox"  class="input9"name="guanli"/>权限管理
+                                    <input type="checkbox"  class="input10"name="guanli"/>后台管理
+                                </div>
+                                <button class="btn btn-default" style="margin-right:10px " id="tianjiazhiweiguanli_wyb">修改</button>
+                                <button class="btn btn-default" style="margin-left:10px " id="btnyincang_wyb">取消</button>
+                            </div>
+
+                            <!--职位管理隐藏界面2结束-->
+
+
+                            <div class="row">
+                                <div class="col-md-12">
+                            <div class="container text-center " style="height: 80%;position: absolute;top: 10%;width: 100%;right: 0;left: 0;margin: auto">
+                                <div class="top_wyb" style="font-weight: 900">
+                                    <h2> 职位管理</h2>
+
+                                </div>
+                                <div class="row">
+                                    <table class="table text-center " style="margin: 0;color:#000;background-color:#fff;height: 50px;line-height: 50px">
+                                        <tr >
+                                            <th class="text-center" style="line-height: 30px;width: 16.5%">职位名称</th>
+                                            <th class="text-center" style="line-height: 30px;width: 42%">职位描述</th>
+                                            <th class="text-center" style="line-height: 30px">查询权限</th>
+                                            <th class="text-center" style="line-height: 30px">考核权限</th>
+                                            <th class="text-center" style="line-height: 30px">销售统计分析</th>
+                                            <th class="text-center" style="line-height: 30px">权限管理</th>
+                                            <th class="text-center" style="line-height: 30px">后台管理</th>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                                <div class="row" style="height: 350px ;overflow-x: hidden;overflow-y: auto ;background: white;">
+
+                                    <table class="table table-bordered text-center" id="table_zhiweiguanli" style="color: #000;padding: 0;margin: 0;z-index: 100" >
+                                        <tr >
+                                            <td>asdas</td>
+                                            <td>asdas</td>
+                                            <td>asdas</td>
+                                            <td>asdas</td>
+                                            <td>asdas</td>
+                                            <td>asdas</td>
+                                            <td>asdas</td>
+                                        </tr>
+                                        <tr>
+                                            <td>asdas</td>
+                                            <td>asdas</td>
+                                            <td>asdas</td>
+                                            <td>asdas</td>
+                                            <td>asdas</td>
+                                            <td>asdas</td>
+                                            <td>asdas</td>
+                                        </tr>
+                                        <tr>
+                                            <td>asdas</td>
+                                            <td>asdas</td>
+                                            <td>asdas</td>
+                                            <td>asdas</td>
+                                            <td>asdas</td>
+                                            <td>asdas</td>
+                                            <td>asdas</td>
+                                        </tr>
+                                        <tr>
+                                            <td>asdas</td>
+                                            <td>asdas</td>
+                                            <td>asdas</td>
+                                            <td>asdas</td>
+                                            <td>asdas</td>
+                                            <td>asdas</td>
+                                            <td>asdas</td>
+                                        </tr>
+                                        <tr>
+                                            <td>asdas</td>
+                                            <td>asdas</td>
+                                            <td>asdas</td>
+                                            <td>asdas</td>
+                                            <td>asdas</td>
+                                            <td>asdas</td>
+                                            <td>asdas</td>
+                                        </tr>
+                                        <tr>
+                                            <td>asdas</td>
+                                            <td>asdas</td>
+                                            <td>asdas</td>
+                                            <td>asdas</td>
+                                            <td>asdas</td>
+                                            <td>asdas</td>
+                                            <td>asdas</td>
+                                        </tr>
+                                        <tr>
+                                            <td>asdas</td>
+                                            <td>asdas</td>
+                                            <td>asdas</td>
+                                            <td>asdas</td>
+                                            <td>asdas</td>
+                                            <td>asdas</td>
+                                            <td>asdas</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="row" style="margin-top: 50px">
+                                    <div class="col-md-6 text-right">
+                                        <button class="btn btn-warning" id="showguanliyincang_wyb_1">添加新职位</button>
+                                    </div>
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-6 text-left">
+                                        <button class="btn btn-warning "  id="showguanliyincang_wyb_2">修改职位权限</button>
+                                    </div>
+                                </div>
+                            </div>
+                                </div>
+                            </div>
+                        </div>
+                    <!------------------------------------>
+
+                    </div>
+                        <!--------------------------------->
+                    <div class="row" style="height: 30%;">
+                        <div class="col-12">
+                            <div class="ipad-with-video hidden-xs ">
+                                <img src="img/tu7998_8.jpg" alt=""/>
+                                <!--  <a href="https://www.youtube.com/embed/TzIhH_V2mEU?rel=0" data-width="100%" data-toggle="lightbox" class="video&#45;&#45;wrapper fresco" data-fresco-options="rel: 0">
+                                      <video width="598" height="290" controls="false" autoplay="autoplay" loop="true" >
+                                          <source src="https://webassets.desk.com/assets/videos/desk-overview-loop.mp4" type="video/mp4">
+                                          Sorry, this video is not supported.
+                                      </video>
+                                  </a>
+                              </div>-->
+                            </div>
+                        </div>
+                    </div>
+                            </div>
+                    <!-----------------right结束-------------------------------------->
+                </div>
+            </div>
+            <!-- ===============content结束===============-->
+        </div>
+    </div>
+</div>
+    </div>
+<script>
+ /*   $(".yes").click(function(){
+        window.location.href="index.html";
+    });
+    $(".list_1_lx").click(function(){
+        window.location.href="system.html";
+    });*/
+    $("#G_L_1").click(function(){
+        window.location.href="G_L1.html";
+    });
+    $("#G_L_2").click(function(){
+        window.location.href="G_L2.html";
+    });
+  /*  $(".W_Q").click(function(){
+        window.location.href="W_Q1.html";
+    });*/
+    $("#wyb1").click(function(){
+        window.location.href="W_Y_B1.html";
+    });
+    $("#wyb2").click(function(){
+        window.location.href="W_Y_B2.html";
+    });
+    $("#wyb3").click(function(){
+        window.location.href="W_Y_B3.html";
+    });
+
+    $("#name_lx").text(localStorage.user);
+    //  系统信息
+    $("#xitong").on("click",function(){
+        $("#xitongxinxi").show();
+        $("#one").hide();
+        $("#two").hide();
+    })
+    //    显示隐藏information
+    $("#information1").on("click",function(){
+        $("#xitongxinxi").hide();
+        $("#one").show();
+        $("#two").hide();
+    })
+    $("#information2").on("click",function(){
+        $("#two").show();
+        $("#xitongxinxi").hide();
+        $("#one").hide();
+
+    })
+   // <!-- 查找的弹出框-->
+    $(".btn4").click(function(){
+        $(".tiankuang").show();
+    })
+    $(".btn10").click(function(){
+        $(".tiankuang2").show();
+    })
+
+</script>
+<script src="js/wuyanbing.js"></script>
+<script src="js/wuyanbing_1.js"></script>
+<script src="js/fangfa_lx.js"></script>
+</body>
+</html>

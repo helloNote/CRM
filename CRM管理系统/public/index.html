@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+    <link rel="stylesheet" href="lib/css/bootstrap.main.css"/>
+    <link rel="stylesheet" href="css/login.css"/>
+    <link rel="Shortcut Icon" href="img/tupian.png">
+    <script src="lib/js/jquery-1.11.1.min.js"></script>
+    <script src="lib/js/bootstrap.min.js"></script>
+    <script src="js/localstroge.js"></script>
+</head>
+<body>
+
+<div class="container-fluid wrap">
+    <div class="box">
+        <div class="site-wrapper-inner">
+
+            <div class="cover-container">
+                <!------------------------------------>
+                <div class="container" >
+                        <div class="row">
+                           <div class="col-md-12 text-center">
+                              <!-- <img src="img/logo.png" alt="logo" class="img1"/>-->
+                           </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-5 col-md-offset-3">
+                                        <form class="form_lx">
+                                            <div class="form-group text_lx_1">
+                                                <label for="Username">用户</label>
+                                                <input type="text" class="form-control inp" id="Username" placeholder="user">
+                                                <span class="Prompt1" style="color: red;display: none">请输入账号，账号为6-12位的数字，没有请注册！</span>
+                                            </div>
+                                            <div class="form-group text_lx_2">
+                                                <label for="Password1">密码</label>
+                                                <input type="password" class="form-control inp" id="Password1" placeholder="Password">
+                                                <span class="Prompt2" style="color: red;display: none">密码不正确！</span>
+                                            </div>
+                                            <div class="btn btn-info btn-block btu " id="btu" >登录</div>
+                                            <div class="btn btn-info btn-block btu" id="btu1" style="margin-top: 20px">
+                                                注册 </div>
+                                            <span class="span_lx" style="font-size: 25px;color: red;display: inline-block;margin-top: 20px;margin-left: 50px;font-weight: bold;display: none">用户不存在，请注册！</span>
+                                            <span class="span1_lx" style="font-size: 25px;color: red;display: inline-block;margin-top: 20px;margin-left: 50px;font-weight: bold;display: none">密码或账号不正确！</span>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+              <!------------------------------->
+                <svg class="curve-shadow" version="1.1" width="100%" height="105" viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <path d="M0 100 C 20 0 50 0 100 100 Z"></path>
+                </svg>
+                <svg class="curve"  version="1.1" width="100%" height="90" viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <path d="M0 100 C 20 0 50 0 100 100 Z"></path>
+                </svg>
+            </div>
+
+            <div class="online-container">
+                <div class="container">
+                    <div class="row main-heading">
+                        <h1 class="">欢迎登陆, <span class="widow">成都市CRM管理系统</span></h1>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $("#Username").blur(function(){
+        var reg=/^([+-]?)\d*\.?\d+$/;
+        var user=$("#Username").val();
+        if(user.length>=6&&user.length<=10&&reg.test(user)==true){
+            $(".Prompt1").css({display:"none"})
+        }else{
+            $(".Prompt1").css({display:"inline-block"})
+        }
+    });
+    $("#btu1").click(function(){
+        window.location.href="register.html";
+    });
+    /*===================登录======================*/
+    $("#btu").click(function(){
+        var user_lx=$("#Username").val();
+        var password1_lx=$("#Password1").val();
+        var jh={
+            user:user_lx,
+            password:password1_lx
+        }
+        /*============发送Ajax开始===============*/
+        if(user_lx!=""&&password1_lx!=""){
+            $.ajax({
+                type:"post",
+                url:"/sendadmin",
+                data:jh,
+                success:function(data){
+                    if(data=="用户不存在"){
+                        $(".span_lx").css({display:"inline-block"});
+                        $(".span1_lx").css({display:"none"})
+                    }else{
+                        $(".span_lx").css({display:"none"});
+                        if(data==""){
+                            $(".span1_lx").css({display:"inline-block"})
+                        }else{
+                            $(".span1_lx").css({display:"none"});
+                           window.location.href="page.html";
+
+
+                        }
+                    }
+                }
+            })
+            /*=========发送Ajax结束====================*/
+        }
+
+    })
+    $(document).keydown(function (event) {
+        console.log(event.keyCode);
+        if(event.keyCode==13){
+            var user_lx=$("#Username").val();
+            var password1_lx=$("#Password1").val();
+            var jh={
+                user:user_lx,
+                password:password1_lx
+            }
+            /*============发送Ajax开始===============*/
+            if(user_lx!=""&&password1_lx!=""){
+                $.ajax({
+                    type:"post",
+                    url:"/sendadmin",
+                    data:jh,
+                    success:function(data){
+                        if(data=="用户不存在"){
+                            $(".span_lx").css({display:"inline-block"});
+                            $(".span1_lx").css({display:"none"})
+                        }else{
+                            $(".span_lx").css({display:"none"});
+                            if(data==""){
+                                $(".span1_lx").css({display:"inline-block"})
+                            }else{
+                                $(".span1_lx").css({display:"none"});
+                                window.location.href="page.html";
+
+
+                            }
+                        }
+                    }
+                })
+                /*=========发送Ajax结束====================*/
+            }
+
+        }
+    });
+
+</script>
+
+</body>
+</html>

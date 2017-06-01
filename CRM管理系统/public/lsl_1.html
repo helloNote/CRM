@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>班级管理</title>
+    <link rel="stylesheet" href="lib/css/bootstrap.main.css"/>
+    <link rel="stylesheet" href="css/page.css"/>
+    <link rel="stylesheet" href="css/indexclass_lsl.css"/>
+    <link rel="Shortcut Icon" href="img/tupian.png">
+    <script src="lib/js/jquery-1.11.1.min.js"></script>
+    <script src="lib/js/bootstrap.min.js"></script>
+    <script src="js/indexclass_lsl.js"></script>
+    <style>
+        .alert_lx{
+            width: 400px;
+            height: 150px;
+            position: absolute;
+            margin: auto;
+
+        }
+        .txt_lx{
+            font-size: 20px;
+            display: inline-block;
+            width: 100%;
+            line-height: 100px;
+        }
+        .btn_lx{
+            position: absolute;
+            right: 30px;
+            bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="img_lx">
+    <div class="box_lx">
+        <!-- ===============content开始===============-->
+        <div class="container-fluid wrap_lx">
+            <div class="row" style="height: 100%;width: 100%">
+
+                <!-----------------left开始------------------------->
+                <div class="col-md-2" style="height: 100%" >
+
+                    <div class="row" style="height: 19%;background: #A58B79">
+                        <div class="col-md-12 text-center">
+                            <span class="pic_lx"></span>
+                            <p class="text_lx">苦尽甘来的味道</p>
+                        </div>
+                    </div>
+
+                    <div class="row" style="height: 62%;background: white">
+                        <div class="col-md-12 text-center">
+
+                            <div class="panel-group mean_lx" id="accordion">
+                                <div class="panel panel-default mean_1_lx">
+                                    <div class="panel-heading G_L cur_lx" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                        <span class="glyphicon glyphicon-education icon"></span>
+                                        <h4 class="h4">School Administration</h4>
+                                    </div>
+                                    <div id="collapseOne" class="panel-collapse collapse fade">
+                                        <div class="panel-body">
+                                            <ul class="list-unstyled text_1_lx">
+                                                <li><a id="G_L_1">学校活动</a></li>
+                                                <li><a id="G_L_2">学校管理</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default mean_1_lx">
+                                    <div class="panel-heading list_1_lx cur_lx" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                        <span class="glyphicon glyphicon-user icon"></span>
+                                        <h4 class="h4">User Management</h4>
+                                    </div>
+                                    <div id="collapseTwo" class="panel-collapse collapse list_1_1_lx fade in">
+                                        <div class="panel-body">
+                                            <ul class="list-unstyled text_1_lx">
+                                                <li><a id="w_q">老师管理</a></li>
+                                                <li><a id="l_c">学生管理</a></li>
+                                                <li><a id="l_s_l">班级管理</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default mean_1_lx">
+                                    <div class="panel-heading w_y_b cur_lx" data-toggle="collapse"data-parent="#accordion"href="#collapseThree">
+                                        <span class="glyphicon glyphicon-file icon"></span>
+                                        <h4 class="h4">Data Management</h4>
+                                    </div>
+                                    <div id="collapseThree" class="panel-collapse collapse fade">
+                                        <div class="panel-body">
+                                            <ul class="list-unstyled text_1_lx">
+                                                <li><a id="wyb1">人员管理</a></li>
+                                                <li><a id="wyb2">职位管理</a></li>
+                                                <li><a id="wyb3">部门管理</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default mean_1_lx">
+                                    <div class="panel-heading list_1_lx cur_lx" data-toggle="collapse"data-parent="#accordion"href="#collapseFour">
+                                        <span class="glyphicon glyphicon-erase icon"></span>
+                                        <h4 class="h4">System Information</h4>
+                                    </div>
+                                    <div id="collapseFour" class="panel-collapse collapse fade ">
+                                        <div class="panel-body">
+                                            <ul class="list-unstyled text_1_lx text-center">
+                                                <li><a id="information1" onclick="rzyl()">日志一览</a></li>
+                                                <li><a id="information2" onclick="xxyl()">信息一览</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row"style="height: 19%;background:#A58B79">
+                        <div class="col-md-12"></div>
+                    </div>
+                </div>
+                <!-----------------left结束------------------------->
+
+                <!-----------------right开始-------------------------------------->
+                <div class="col-md-10" style="height: 100%">
+                    <div class="row"style="height: 5%;">
+                        <div class="col-12" >
+                            <div class="box_lx_2">
+                                <span class="user">您好！<label id="name_lx"></label></span>
+                                <button class="log_off_lx" data-toggle="modal" data-target="#myModal">注销</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--------提示框开始------------->
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header header_lx">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">注意</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <span>是否确认注销用户？</span>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                                    <button type="button" class="btn btn-primary yes">Yes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--------提示框结束---------------->
+
+                    <div class="row" style="height: 65%;padding: 0 200px 0 200px">
+                        <div class="col-12">
+                        <!----------------------->
+                            <div class="row colH1lc">
+                                <div class="col-md-12 text-center">
+                                    <h2 style="color: white">班级一览</h2>
+                                </div>
+
+                            </div>
+                            <!--管理内容-->
+                            <div class="row formLc">
+                                <!--学校导航栏-->
+                                <div class="col-md-3 formMessagelc">
+                                    <div class="row" style="margin-top: 20px">
+                                        <ul class="nav nav-pills nav-stacked">
+                                            <li role="presentation" class="active" >
+
+                                                <a href="#" style="background-color:white;color: #333333; "><span class="glyphicon glyphicon-folder-open tubiao" style="color: #6F4E3B"></span>四川省</a>
+                                            </li>
+                                            <li role="presentation" class="dropdown">
+                                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color: #333333">
+                                                    <span class="glyphicon glyphicon-file tubiao" style="color: #6F4E3B;margin-left: 10px;"></span>成都市
+                                                </a>
+                                                <ul class="dropdown-menu " >
+                                                    <li class="li_lsl" onclick="schoolone()">成都外国语学校</li>
+                                                    <li class="li_lsl"   onclick="schooltwo()">成都第十二中学</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!--学生信息-->
+                                <div class="col-md-9 formCountentlc" style="padding: 0">
+                                    <!--学生表格-->
+                                    <table class="table table-condensed table-bordered table-hover_w_q">
+                                        <tbody id="banjitable_lsl">
+
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <!-- ===============添加班委======================-->
+                                <div class="addbanwei">
+                                    <div class="countainer">
+                                        <div class="modal-footer_lsl">
+                                            <button type="button" class="btn btn-warning addbanji" data-dismiss="modal" id="addadd">添加班级</button>
+                                            <button type="button" class="btn btn-warning dropbanji" id="dropdrop">删除班级</button>
+                                        </div>
+
+                                        <!--弹框 -->
+                                        <div class="tangkuang1"><h4 class="tishi">添加成功</h4></div>
+                                        <!--<div id="myAlert" class="alert alert-danger alert_lx " style="display: none;">-->
+                                            <!--&lt;!&ndash; <a href="#" class="close" data-dismiss="alert" >&times;</a><br>&ndash;&gt;-->
+                                            <!--<strong class="txt_lx text-center">文字</strong><br/>-->
+                                            <!--&lt;!&ndash;     <button class="btn btn-info btn_lx">确定</button>&ndash;&gt;-->
+                                        <!--</div>-->
+                                        <!--<div class="tangkuang2"><h4 class="tishi">添加失败</h4></div>-->
+                                        <!-- 班级添加-->
+                                        <div class="addbjbox text-center" id="box1">
+
+                                            <h4>班级添加</h4>
+                                            <hr/>
+                                            <div class="addbjbox_1" >
+                                                <label for="" class="label1">班级名称:</label>
+                                                <input type="text" class="put1" id="put1" onblur="fun1()"/><br/>
+                                                <label for="">所属学校:</label>
+                                                <select name="" id="put2" class="put2" >
+                                                    <option value="成都外国语学校">成都外国语学校</option>
+                                                    <option value="成都十二中">成都十二中</option>
+
+                                                </select>
+                                                <label for="">带班老师:</label>
+                                                <select name=""  class="put2" id="put3">
+                                                    <option value="">老罗</option>
+                                                    <option value="">小李</option>
+                                                    <option value="">小王</option>
+                                                    <option value="">老李</option>
+                                                </select>
+                                                <div class="btnbtn">
+                                                    <button  class="btn btn-default as" id="addlsl_1" onclick="addlsl_1()">添加</button>
+
+                                                    <button  class="btn btn-default as" id="quxiao">取消</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- 删除班委-->
+                                        <div class="dropbanwei" id="box2">
+                                            <h4>删除班委</h4>
+                                            <hr/>
+                                            <h5>确认要删除?</h5>
+                                            <div class="btnbtn2">
+                                                <button type="button" class="btn btn-default ad" data-dismiss="modal"  id="shanchu" >确定</button>
+                                                <button type="button" class="btn btn-default af" id="quxiao2">取消</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <!----------------------->
+                        </div>
+                    </div>
+                    <div class="row" style="height: 30%;">
+                        <div class="col-12">
+                            <div class="ipad-with-video hidden-xs ">
+                                <img src="img/tu7998_8.jpg" alt=""/>
+                                <!--  <a href="https://www.youtube.com/embed/TzIhH_V2mEU?rel=0" data-width="100%" data-toggle="lightbox" class="video&#45;&#45;wrapper fresco" data-fresco-options="rel: 0">
+                                      <video width="598" height="290" controls="false" autoplay="autoplay" loop="true" >
+                                          <source src="https://webassets.desk.com/assets/videos/desk-overview-loop.mp4" type="video/mp4">
+                                          Sorry, this video is not supported.
+                                      </video>
+                                  </a>
+                              </div>-->
+                            </div>
+                        </div>
+                    </div>
+                    <!-----------------right结束-------------------------------------->
+                </div>
+            </div>
+            <!-- ===============content结束===============-->
+        </div>
+    </div>
+</div>
+
+<!--<div class="col-md-10 col-md-offset-1 col-xs-12 box_lx ">
+
+
+</div>-->
+<script src="js/ajaxlsl.js"></script>
+<script>
+
+    $("#w_q").click(function(){
+        window.location.href="W_Q1.html";
+    });
+    $("#l_c").click(function(){
+        window.location.href="L_C.html";
+    });
+    $("#l_s_l").click(function(){
+        window.location.href="lsl_1.html";
+    });
+    $("#name_lx").text(localStorage.user);
+/*===============================================*/
+    $("#addadd").on("click",function(){
+        $("#box1").show();
+    })
+    $("#quxiao").on("click",function(){
+        $("#box1").hide();
+    })
+    $("#dropdrop").on("click",function(){
+        $("#box2").show();
+
+    })
+    $("#quxiao2").on("click",function(){
+        $("#box2").hide();
+    })
+
+    $("#addlsl_1").on("click",function(){
+        $(".tangkuang1").fadeIn().show();
+        setTimeout(function(){$(".tangkuang1").hide()},1500);
+        $("#box1").hide();
+    });
+    $("#shanchu").on("click",function(){
+        $("#box2").hide();
+    })
+
+</script>
+<script src="js/fangfa_lx.js"></script>
+<script>
+
+
+</script>
+</body>
+</html>

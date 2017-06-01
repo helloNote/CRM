@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>学校管理</title>
+    <link rel="stylesheet" href="lib/css/bootstrap.main.css"/>
+    <link rel="stylesheet" href="css/page.css"/>
+    <link rel="Shortcut Icon" href="img/tupian.png">
+    <link rel="stylesheet" href="css/wyb.css"/>
+    <script src="lib/js/jquery-1.11.1.min.js"></script>
+    <script src="lib/js/bootstrap.min.js"></script>
+    <style>
+        .alert_lx{
+            width: 400px;
+            height: 150px;
+            position: absolute;
+            margin: auto;
+            display: none;
+            border-radius: 15px;
+
+        }
+        .txt_lx{
+            font-size: 20px;
+            display: inline-block;
+            width: 100%;
+            line-height: 100px;
+        }
+        .btn_lx{
+            position: absolute;
+            right: 30px;
+            bottom: 20px;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="img_lx">
+    <div class="box_lx">
+        <!-- ===============content开始===============-->
+        <div class="container-fluid wrap_lx">
+            <div class="row" style="height: 100%;width: 100%">
+
+                <!-----------------left开始------------------------->
+                <div class="col-md-2" style="height: 100%" >
+
+                    <div class="row" style="height:19%;background: #A58B79">
+                        <div class="col-md-12 text-center">
+                            <span class="pic_lx"></span>
+                            <p class="text_lx">苦尽甘来的味道</p>
+                        </div>
+                    </div>
+
+                    <div class="row" style="height: 62%;background: white">
+                        <div class="col-md-12 text-center">
+
+                            <div class="panel-group mean_lx" id="accordion">
+                                <div class="panel panel-default mean_1_lx">
+                                    <div class="panel-heading G_L cur_lx" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                        <span class="glyphicon glyphicon-education icon"></span>
+                                        <h4 class="h4">School Administration</h4>
+                                    </div>
+                                    <div id="collapseOne" class="panel-collapse collapse fade ">
+                                        <div class="panel-body">
+                                            <ul class="list-unstyled text_1_lx">
+                                                <li><a id="G_L_1">学校活动</a></li>
+                                                <li><a id="G_L_2">学校管理</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default mean_1_lx">
+                                    <div class="panel-heading W_Q cur_lx" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                        <span class="glyphicon glyphicon-user icon"></span>
+                                        <h4 class="h4">User Management</h4>
+                                    </div>
+                                    <div id="collapseTwo" class="panel-collapse collapse list_1_1_lx fade">
+                                        <div class="panel-body">
+                                            <ul class="list-unstyled text_1_lx">
+                                                <li><a>老师管理</a></li>
+                                                <li><a>学生管理</a></li>
+                                                <li><a>班级管理</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default mean_1_lx">
+                                    <div class="panel-heading w_y_b cur_lx" data-toggle="collapse"data-parent="#accordion"href="#collapseThree">
+                                        <span class="glyphicon glyphicon-file icon"></span>
+                                        <h4 class="h4">Data Management</h4>
+                                    </div>
+                                    <div id="collapseThree" class="panel-collapse collapse fade in">
+                                        <div class="panel-body">
+                                            <ul class="list-unstyled text_1_lx">
+                                                <li><a id="wyb1">人员管理</a></li>
+                                                <li><a id="wyb2">职位管理</a></li>
+                                                <li><a id="wyb3">部门管理</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default mean_1_lx">
+                                    <div class="panel-heading list_1_lx cur_lx" data-toggle="collapse"data-parent="#accordion"href="#collapseFour">
+                                        <span class="glyphicon glyphicon-erase icon"></span>
+                                        <h4 class="h4">System Information</h4>
+                                    </div>
+                                    <div id="collapseFour" class="panel-collapse collapse fade">
+                                        <div class="panel-body">
+                                            <ul class="list-unstyled text_1_lx text-center">
+                                                <li><a id="information1" onclick="rzyl()">日志一览</a></li>
+                                                <li><a id="information2" onclick="xxyl()">信息一览</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row"style="height: 19%;background:#A58B79">
+                        <div class="col-md-12"></div>
+                    </div>
+                </div>
+                <!-----------------left结束------------------------->
+
+                <!-----------------right开始-------------------------------------->
+                <div class="col-md-10" style="height: 100%">
+                    <div class="row"style="height: 5%;">
+                        <div class="col-12" >
+                            <div class="box_lx_2">
+                                <span class="user">您好！<label id="name_lx"></label></span>
+                                <button class="log_off_lx" data-toggle="modal" data-target="#myModal">注销</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--------提示框开始------------->
+                    <!-- Modal -->
+                    <div id="myAlert" class="alert alert-danger alert_lx" >
+                        <!-- <a href="#" class="close" data-dismiss="alert" >&times;</a><br>-->
+                        <strong class="txt_lx text-center">文字</strong><br/>
+                        <!--     <button class="btn btn-info btn_lx">确定</button>-->
+                    </div>
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header header_lx">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">注意</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <span>是否确认注销用户？</span>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                                    <button type="button" class="btn btn-primary yes">Yes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--------提示框结束---------------->
+
+                    <div class="row" style="height: 65%;padding: 0 200px 0 200px">
+                            <!-------------------------------->
+                        <div class="col-12">
+
+                            <div class="col-md-1"></div>
+                            <div class="col-md-10 list2_lx col-xs-9" style="position: relative" >
+                                <!--隐藏部分1-->
+                                <div class="div_yingcang_wyb_1 container-fluid" id="div_yingcang_wyb_1" style="position: absolute; width:80%;height: 80%;display: none;background-color:#eee;">
+                                    <h2 style="" >员工信息添加</h2>
+
+                                    <div class="row" >
+                                        <hr style="color: #fff"/>
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-5" >
+                                            <form action="">
+                                                <div class="form-group text-left">
+                                                    <label for="textname_wyb">员工姓名</label>
+                                                    <input type="text" id="textname_wyb" style="margin-left: 10px"/>
+                                                </div>
+                                                <div class="form-group text-left" style="margin-top: 30px">
+                                                    <label for="texttime_wyb">出生日期</label>
+                                                    <input type="date" id="texttime_wyb" style="margin-left: 10px"/>
+                                                </div>
+                                                <div class="form-group text-left" style="margin-top: 30px">
+                                                    <label for="textstudy_wyb">所属专业</label>
+                                                    <input type="text" id="textstudy_wyb" style="margin-left: 10px"/>
+                                                </div>
+                                                <div class="form-group text-left" style="margin-top: 30px">
+                                                    <label for="textsreet_wyb">家庭住址</label>
+                                                    <input type="text" id="textsreet_wyb" style="margin-left: 10px"/>
+                                                </div>
+                                                <div class="form-group text-left" style="margin-top: 30px" >
+                                                    <label for="">所在部门</label>
+                                                    <select name="s1" id="select_wyb_1" style="margin-left: 10px">
+                                                        <option value="" >市场部</option>
+                                                        <option value="" >人事部</option>
+                                                        <option value="" >财务部</option>
+                                                        <option value="" >行政部</option>
+                                                    </select>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="col-md-5 right11">
+                                            <form action="">
+                                                <div class="form-group text-left">
+                                                    <label for="" >性别</label>
+                                                    <input type="radio" name="sex" name1="男" style="margin-left: 35px" />男
+                                                    <input type="radio" name="sex" name1="女" style="margin-left: 35px"/>女
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <label for="" >文化程度</label>
+                                                    <select name="" style="width: 100px;margin-left: 10px"id="select_wyb_2" >
+                                                        <option value="">中专以下</option>
+                                                        <option value="">中专</option>
+                                                        <option value="">大专</option>
+                                                        <option value="">本科</option>
+                                                        <option value="">硕士</option>
+                                                        <option value="">博士</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <label for="textphone_wyb">联系方式</label>
+                                                    <input type="text" id="textphone_wyb" style="margin-left: 10px"/>
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <label for="" >政治面貌</label>
+                                                    <select name="" style="width: 100px;margin-left: 10px" id="select_wyb_3"  >
+                                                        <option value="">团员</option>
+                                                        <option value="">党员</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <label for="" >工作职位</label>
+                                                    <select name="" style="width: 100px;margin-left: 10px" id="select_wyb_4"  >
+                                                        <option value="">经理</option>
+                                                        <option value="">秘书</option>
+                                                        <option value="">职员</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <label for="texttime1_wyb">入职时间</label>
+                                                    <input type="date" id="texttime1_wyb" style="margin-left: 10px"/>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 text-right">
+                                            <button class="btn btn-default" id="tianjiayuangongxinxi_wyb">添加</button>
+
+                                        </div>
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-6 text-left">
+                                            <button class="btn btn-default " id="btnyingcang_1">取消</button>
+                                        </div>
+                                    </div>
+
+                                    <!--<form action="">-->
+                                    <!--<div class="form-group">-->
+                                    <!--<label for="textname_wyb">姓名</label>-->
+                                    <!--<input type="text" id="textname_wyb"/>-->
+                                    <!--<label for="">性别</label>-->
+                                    <!--<input type="radio" name="sex_wyb_1"/>男-->
+                                    <!--<input type="radio" name="sex_wyb_1" />女-->
+                                    <!--</div>-->
+                                    <!--</form>-->
+                                </div>
+                                <!--隐藏部分1结束-->
+
+
+
+
+                                <!--隐藏部分2开始-->
+                                <div  class="div_yingcang_wyb_1 container-fluid" id="div_yingcang_wyb_2" style="position: absolute; width:80%;height: 70%;display: none;background-color:#eee;">
+                                    <h2 style="">员工信息查询</h2>
+                                    <div class="row" style="font-size: 18px">
+                                        <hr style="color: #fff"/>
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-5" >
+                                            <form action="">
+                                                <div class="form-group text-left">
+                                                    <label for="textname_wyb">员工姓名</label>
+                                                    <!--<div type="text" id="textname_wyb_1" ></div>-->
+                                                    <span id="textname_wyb_span">文天祥</span>
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <label for="texttime_wyb">出生日期</label>
+                                                    <!--<input type="text" id="texttime_wyb_2" disabled value="1994-08-15" />-->
+                                                    <span id="texttime_wyb_span">1994-08-15</span>
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <label for="textstudy_wyb">所属专业</label>
+                                                    <!--<input type="text" id="textstudy_wyb_3" disabled value="电子信息工程"/>-->
+                                                    <span id="textstudy_wyb_span">电子信息工程</span>
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <label for="textsreet_wyb">家庭住址</label>
+                                                    <!--<input type="text" id="textsreet_wyb_4" disabled value="火星"/>-->
+                                                    <span id="textsreet_wyb_span">火星</span>
+                                                </div>
+                                                <div class="form-group text-left" >
+                                                    <label for="">所在部门</label>
+                                                    <span id="label_spanbumen">市场部</span>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <form action="">
+                                                <div class="form-group text-left">
+                                                    <label for="" >性别</label>&nbsp &nbsp &nbsp &nbsp;
+                                                    <span id="label_spansex">男</span>
+                                                    <!--<input type="radio" name="sex" style="margin-left: 30px"/>女-->
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <label for="" >文化程度</label>
+                                                    <span id="label_spanwenhua">高中</span>
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <label for="textphone_wyb">联系方式</label>
+                                                    <!--<input type="text" id="textphone_wyb_1" disabled value="15756875934"/>-->
+                                                    <span id="textphone_wyb_span">15756875934</span>
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <label for="" >政治面貌</label>
+                                                    <span id="label_span_zhengzhi">团员</span>
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <label for="" >工作职位</label>
+                                                    <span id="label_span_job">秘书</span>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <!--<div class="col-md-6 text-right">-->
+                                        <!--<button class="btn btn-default">添加</button>-->
+                                        <!--</div>-->
+                                        <!--<div class="col-md-1"></div>-->
+                                        <!--<div class="col-md-6 text-left">-->
+                                        <!--<button class="btn btn-default " id="btnyingcang_2">确定</button>-->
+                                        <!--</div>-->
+                                    </div>
+                                </div>
+                                <!--隐藏部分2结束-->
+
+
+
+
+
+                                <!--隐藏部分3开始-->
+                                <div class="div_yingcang_wyb_1 container-fluid" id="div_yingcang_wyb_3" style="position: absolute; width:80%;height: 30%;display: none;background-color:#eee" >
+                                    <h4 style="margin-top: 5%">确定要删除吗？</h4>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <div class="row">
+                                        <div class="col-md-5" style="text-align: right">
+                                            <button class="btn btn-default" id="quedingshanchuyuangong_wyb" >确定</button>
+                                        </div>
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-5 text-left">
+                                            <button class="btn btn-default " id="btndeletyincang_wyb_3">取消</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--隐藏部分3结束-->
+
+
+
+                                <!--隐藏部分4开始-->
+
+                                <div  class="div_yingcang_wyb_1 container-fluid" id="div_yingcang_wyb_4" style="position: absolute; width:80%;height: 70%; display: none;background-color:#eee">
+                                    <h3 style="">修改员工信息</h3>
+                                    <div class="row">
+                                        <hr style="color: #fff"/>
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-5" >
+                                            <form action="">
+                                                <div class="form-group text-left">
+                                                    <label for="textname_wyb">员工姓名</label>
+                                                    <input type="text" id="textname_wyb_4" disabled value="文天祥" />
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <label for="texttime_wyb">出生日期</label>
+                                                    <input type="text" id="texttime_wyb_5" disabled value="1994-08-15" />
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <label for="textstudy_wyb">所属专业</label>
+                                                    <input type="text" id="textstudy_wyb_6" disabled value="电子信息工程"/>
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <label for="textsreet_wyb">家庭住址</label>
+                                                    <input type="text" id="textsreet_wyb_7" disabled value="火星"/>
+                                                </div>
+                                                <div class="form-group text-left" >
+                                                    <label for="">所在部门</label>
+                                                    <select name="" id="select_wyb_suozaibumen">
+                                                        <option value="">市场部</option>
+                                                        <option value="">人事部</option>
+                                                        <option value="">财务部</option>
+                                                        <option value="">行政部</option>
+                                                    </select>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <form action="">
+                                                <div class="form-group text-left">
+                                                    <label for="" >性别</label>
+                                                    <span id="span_sex_8" style="margin-left: 90px">男</span>
+                                                    <!--<input type="radio" name="sex" style="margin-left: 30px"/>女-->
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <label for="" >文化程度</label>
+                                                    <span id="span_study_9">高中</span>
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <label for="textphone_wyb">联系方式</label>
+                                                    <input type="text" id="textphone_wyb_2"  value="15756875934"/>
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <label for="" >政治面貌</label>
+                                                    <select name="" style="width: 100px;" id="zhengshimiamao_10"  >
+                                                        <option value="">团员</option>
+                                                        <option value="">党员</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group text-left">
+                                                    <label for="" >工作职位</label>
+                                                    <select name="" style="width: 100px;" id="select_wyb_job" >
+                                                        <option value="">经理</option>
+                                                        <option value="">秘书</option>
+                                                        <option value="">职员</option>
+                                                    </select>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <!--<div class="col-md-6 text-right">-->
+                                        <!--<button class="btn btn-default">添加</button>-->
+                                        <!--</div>-->
+                                        <div class="col-md-3"></div>
+                                        <div class="col-md-6 text-center">
+                                            <button class="btn btn-default " id="btnyingcang_4">确定</button>
+                                            <button class="btn btn-default " id="btnyingcang_41" style="margin-left: 30px">取消</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <!--隐藏部分4结束-->
+
+
+
+                                <!--隐藏部分5开始-->
+                                <div class="div_yingcang_wyb_1 container-fluid" id="div_yingcang_wyb_30" style="position: absolute; width:80%;height: 30%;display: none" >
+                                    <h4 style="margin-top: 10%">确定要添加吗？</h4>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <div class="row">
+                                        <div class="col-md-5" style="text-align: right">
+                                            <button class="btn btn-default" >确定</button>
+                                        </div>
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-5 text-left">
+                                            <button class="btn btn-default " id="btndeletyincang_wyb_31">取消</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--隐藏部分5结束-->
+                                <div class="row" >
+                                    <div class="top_wyb" style="font-family: '微软雅黑'">
+                                        <h2>员 工 管 理</h2>
+                                    </div>
+                                    <div class="col-md-10 col-md-offset-1 col-xs-12 box_lx ">
+                                        <table class="table  text-center"style="margin-bottom: 0;background-color:#fff;color: #000">
+                                            <tr style="font-size: 15px;font-weight: 900">
+                                                <td style="width: 11%">姓名</td>
+                                                <td style="width: 5.4%">性别</td>
+                                                <td style="width: 15%">出生日期</td>
+                                                <td style="width: 8%">文化程度</td>
+                                                <td style="width: 17.5%">联系方式</td>
+                                                <td style="width: 10%">所在部门</td>
+                                                <td style="width: 10%">工作职位</td>
+
+                                            </tr>
+                                        </table>
+                                        <div style="overflow-x: hidden;overflow-y: auto;height: 150px;">
+                                            <table class="table table-bordered table_1_wyb  text-center" id="table_1_wyb" style="color: #333;background-color:#fff;margin-top: 0">
+
+
+
+                                            </table>
+                                        </div>
+                                        <!--这是中间的查询-->
+                                        <div class="but_grope text-center" style="color: #4C5D73;margin-top: 30px" id="centerchaxun"  >
+
+                                            <button class="btn btn-warning" id="showyingcang1_wyb">添加新员工</button>
+                                            <button class="btn  btn-warning" id="showyingcang2_wyb" >查看员工信息</button>
+                                            <button class="btn  btn-warning" id="showyingcang3_wyb" >删除员工</button>
+                                            <button class="btn  btn-warning" id="showyingcang4_wyb">修改员工信息</button>
+                                        </div>
+                                        <br/>
+                                        <br/>
+                                        <!--这是底部的查询1-->
+                                        <div class="row" >
+                                            <div class="col-md-1"></div>
+                                            <div class="col-md-5">
+                                                <span class="span_2_wyb">查询员工</span>
+                                                <br/>
+                                                <div class="footer_1" >
+                                                    <div class="btn-group but_select_1"style="margin-left: 20px">
+                                                        <button type="button" class="btn btn-default" style="color: #4C5D73" id="but_first_wyb">所有员工</button>
+                                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                                                            <span class="caret"></span>
+                                                            <span class="sr-only">Toggle Dropdown</span>
+                                                        </button>
+
+
+                                                        <ul class="dropdown-menu" id="ul_first_wyb">
+                                                            <li><a href="#" style="color: #4C5D73">所有员工</a></li>
+                                                            <li><a href="#" style="color: #4C5D73">所属部门</a></li>
+                                                            <li><a href="#" style="color: #4C5D73">文化程度</a></li>
+                                                            <li><a href="#" style="color: #4C5D73">工作职位</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <br/>
+                                                    <input type="text" style="margin-left: 20px"  id="input_first_wyb"/>
+                                                    <br/>
+                                                    <button class="btn btn-warning " style="color: #4C5D73;margin-left: 20px;margin-top: 20px;background-color:#CC9966;" id="anneixingchazhao_wyb">查找</button>
+                                                    <button class="btn btn-warning " style="color: #4C5D73;margin-left: 20px;margin-top: 20px;background-color:#CC9966;" id="chankanquanbu_wyb_1">查看全部</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <span class="span_2_wyb">按入职时间查询员工</span>
+                                                <br/>
+                                                <div class="footer_1">
+                                                    <div class="form-group" style="margin-top: 50px;margin-left: 20px">
+                                                        <label for="textimestart_wyb" style="color: white;margin-right: 30px">起始时间</label>
+                                                        <input type="date" id="textimestart_wyb"/>
+                                                    </div>
+                                                    <div class="form-group" style="margin-left: 20px">
+                                                        <label for="textimeend_wyb" style="color: white;margin-right: 30px">结束时间</label>
+                                                        <input type="date" id="textimeend_wyb"/>
+                                                    </div>
+                                                    <div class="form-group text-center">
+                                                        <button class="btn " style="color: #4C5D73;background-color:#CC9966;" id="anshijianchazhao_wyb">查找</button>
+                                                        <button class="btn " style="color: #4C5D73;background-color:#CC9966;margin-left: 30px" id="chankanquanbu_wyb_2">查看全部</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                            <!--------------------------------->
+
+                    </div>
+                        <!--------------------------------->
+                    <div class="row" style="height: 30%;">
+                        <div class="col-12">
+                            <div class="ipad-with-video hidden-xs ">
+                                <img src="img/tu7998_8.jpg" alt=""/>
+                                <!--  <a href="https://www.youtube.com/embed/TzIhH_V2mEU?rel=0" data-width="100%" data-toggle="lightbox" class="video&#45;&#45;wrapper fresco" data-fresco-options="rel: 0">
+                                      <video width="598" height="290" controls="false" autoplay="autoplay" loop="true" >
+                                          <source src="https://webassets.desk.com/assets/videos/desk-overview-loop.mp4" type="video/mp4">
+                                          Sorry, this video is not supported.
+                                      </video>
+                                  </a>
+                              </div>-->
+                            </div>
+                        </div>
+                    </div>
+                            </div>
+                    <!-----------------right结束-------------------------------------->
+                </div>
+            </div>
+            <!-- ===============content结束===============-->
+        </div>
+    </div>
+</div>
+    </div>
+<script>
+
+ /*   $(".yes").click(function(){
+        window.location.href="index.html";
+    });
+    $(".list_1_lx").click(function(){
+        window.location.href="system.html";
+    });*/
+/*    $("#G_L_1").click(function(){
+        window.location.href="G_L1.html";
+    });
+    $("#G_L_2").click(function(){
+        window.location.href="G_L2.html";
+    });*/
+  /*  $(".W_Q").click(function(){
+        window.location.href="W_Q1.html";
+    });*/
+    $("#wyb1").click(function(){
+        window.location.href="W_Y_B1.html";
+    });
+    $("#wyb2").click(function(){
+        window.location.href="W_Y_B2.html";
+    });
+    $("#wyb3").click(function(){
+        window.location.href="W_Y_B3.html";
+    });
+
+    $("#name_lx").text(localStorage.user);
+    //  系统信息
+    $("#xitong").on("click",function(){
+        $("#xitongxinxi").show();
+        $("#one").hide();
+        $("#two").hide();
+    })
+    //    显示隐藏information
+    $("#information1").on("click",function(){
+        $("#xitongxinxi").hide();
+        $("#one").show();
+        $("#two").hide();
+    })
+    $("#information2").on("click",function(){
+        $("#two").show();
+        $("#xitongxinxi").hide();
+        $("#one").hide();
+    })
+   // <!-- 查找的弹出框-->
+    $(".btn4").click(function(){
+        $(".tiankuang").show();
+    })
+    $(".btn10").click(function(){
+        $(".tiankuang2").show();
+    })
+</script>
+<script src="js/wuyanbing.js"></script>
+<script src="js/fangfa_lx.js"></script>
+</body>
+</html>

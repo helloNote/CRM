@@ -1,0 +1,151 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.img_lx{
+    height: 100vh;
+    width: 100%;
+    background: url("../img/wood-bg--md.jpg")50% 50%;
+    background-size: cover;
+}
+.box_lx{
+    width: 100%;
+    height: 100%;
+}
+.wrap_lx{
+    height: 100%;
+    overflow: hidden;
+}
+.container-fluid{
+    margin: 0;
+    padding: 0;
+}
+.row{
+    margin: 0;
+    padding: 0;
+}
+.col-md-2{
+    margin: 0;
+    padding: 0;
+}
+.col-md-10{
+    margin: 0;
+    padding: 0;
+}
+.pic_lx{
+    display: inline-block;
+    width: 100px;
+    height:100px;
+    border-radius: 50%;
+    background: white;
+    margin-top: 23px;
+    background: url("../img/touxiang.jpg");
+    background-size: contain;
+}
+.text_lx{
+    color: white;
+    font-size: 16px;
+    padding-top: 10px;
+}
+
+.list_1_lx{
+    cursor: pointer;
+    background-color: transparent;
+}
+.panel-default > .panel-heading{
+    border: none;
+    background: transparent;
+}
+.h4{
+    color: #333333;
+    font-size: 17px;
+}
+.mean_lx{
+    margin-top: 17%;
+}
+.mean_1_lx{
+    border: none;
+    background: transparent;
+}
+.text_1_lx a{
+    cursor: pointer;
+    font-size: 16px;
+    color: #B6851C;
+
+}
+.text_1_lx li{
+    padding-top: 5px;
+}
+.text_1_lx a:hover{
+    color: #53b7f6;
+}
+.icon{
+    margin-right: 10px;
+    font-size: 26px;
+    color: #6E4D3A;
+    margin-top: 20px;
+}
+.box_lx_2{
+    float: right;
+    margin-top:10px;
+    margin-right: 20px;
+    /* background: #A58B79;
+     width: 100%;*/
+}
+.user{
+    font-size: 18px;
+    color: white;
+}
+.log_off_lx{
+    width: 50px;
+    height: 40px;
+    color: white;
+    background: #C4B29D;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    margin-left: 20px;
+}
+.hidden-xs{
+    background: url("../img/ipad-with-overview-video@1x.png");
+    width: 817px;
+    height: 373px;
+    display: block;
+    position: relative;
+    bottom: 30px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+video{
+    position: absolute;
+    top: 83px;
+    left: 157px;
+}
+p{
+    color: white;
+}
+.text2_lx{
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 10%;
+}
+.cur_lx{
+    cursor: pointer;
+}
+.alert{
+    width: 450px;
+    height: 200px;
+    position: absolute;
+    top: -5px;
+    left: 30%;
+    z-index: 100;
+}
+.txt_lx{
+    font-size: 20px;
+}
+.btn_lx{
+    position: relative;
+    top: 80px;
+    left: 350px;
+}

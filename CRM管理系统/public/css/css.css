@@ -1,0 +1,79 @@
+
+.wrap_lx{
+    background: url("../img/kv_bg.jpg")no-repeat;
+    height: 100vh;
+    background-size:cover;
+}
+.line1_lx{
+    height: 7vh;
+    border-bottom: 1px solid white;
+    background:black;
+    overflow: hidden;
+}
+.user_wrap_lx{
+    height: 7vh;
+}
+.logo_lx{
+    width: 500px;
+    position: relative;
+    left: 15px;
+    top: 5px;
+}
+.user{
+    color: white;
+    font-size: 18px;
+}
+.log_off_lx{
+    width: 50px;
+    height: 40px;
+    color: white;
+    background: #495C71;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+.box_lx_2{
+    float: right;
+    margin-top: 15px;
+}
+/*====================================*/
+.list1_lx{
+    border-right: 1px solid white;
+    height: 93vh;
+    background: rgba(255,255,255,0.3);
+}
+.list2_lx{
+    height: 93vh;
+    background: rgba(255,255,255,0.3);
+}
+
+.box_lx{
+    /*border: 1px solid black;*/
+    margin-top: 80px;
+    text-indent: 2em;
+}
+.box_lx > p {
+    color: white;
+}
+.mean_lx{
+    margin-top: 70px;
+}
+.list_1_lx{
+    cursor: pointer;
+}
+
+.text_1_lx li a{
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+.text_1_lx li a:hover{
+    text-decoration:underline;
+}
+.mean_1_lx{
+    background: rgba(12,58,92,0.2);
+}
+.mean_1_lx > .list_1_lx{
+    background: rgba(12,58,92,0.2);
+    color: white;
+}

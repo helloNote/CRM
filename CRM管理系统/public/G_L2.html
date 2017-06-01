@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>学校管理</title>
+    <link rel="stylesheet" href="lib/css/bootstrap.main.css"/>
+    <link rel="stylesheet" href="css/page.css"/>
+    <link rel="Shortcut Icon" href="img/tupian.png">
+    <link rel="stylesheet" href="css/gl.css"/>
+
+    <script src="lib/js/jquery-1.11.1.min.js"></script>
+    <script src="lib/js/bootstrap.min.js"></script>
+    <script src="js/Gl.js"></script>
+    <script src="js/Ajax_Gl.js"></script>
+</head>
+<body>
+<div class="img_lx">
+    <div class="box_lx">
+        <!-- ===============content开始===============-->
+        <div class="container-fluid wrap_lx">
+            <div class="row" style="height: 100%;width: 100%">
+
+                <!-----------------left开始------------------------->
+                <div class="col-md-2" style="height: 100%" >
+
+                    <div class="row" style="height:19%;background: #A58B79">
+                        <div class="col-md-12 text-center">
+                            <span class="pic_lx"></span>
+                            <p class="text_lx">苦尽甘来的味道</p>
+                        </div>
+                    </div>
+
+                    <div class="row" style="height: 62%;background: white">
+                        <div class="col-md-12 text-center">
+
+                            <div class="panel-group mean_lx" id="accordion">
+                                <div class="panel panel-default mean_1_lx">
+                                    <div class="panel-heading G_L cur_lx" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                        <span class="glyphicon glyphicon-education icon"></span>
+                                        <h4 class="h4">School Administration</h4>
+                                    </div>
+                                    <div id="collapseOne" class="panel-collapse collapse fade in">
+                                        <div class="panel-body">
+                                            <ul class="list-unstyled text_1_lx">
+                                                <li><a id="G_L_1">学校活动</a></li>
+                                                <li><a id="G_L_2">学校管理</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default mean_1_lx">
+                                    <div class="panel-heading W_Q cur_lx" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                        <span class="glyphicon glyphicon-user icon"></span>
+                                        <h4 class="h4">User Management</h4>
+                                    </div>
+                                    <div id="collapseTwo" class="panel-collapse collapse list_1_1_lx fade">
+                                        <div class="panel-body">
+                                            <ul class="list-unstyled text_1_lx">
+                                                <li><a>老师管理</a></li>
+                                                <li><a>学生管理</a></li>
+                                                <li><a>班级管理</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default mean_1_lx">
+                                    <div class="panel-heading w_y_b  cur_lx" data-toggle="collapse"data-parent="#accordion"href="#collapseThree">
+                                        <span class="glyphicon glyphicon-file icon"></span>
+                                        <h4 class="h4">Data Management</h4>
+                                    </div>
+                                    <div id="collapseThree" class="panel-collapse collapse fade">
+                                        <div class="panel-body">
+                                            <ul class="list-unstyled text_1_lx">
+                                                <li><a id="wyb1">人员管理</a></li>
+                                                <li><a id="wyb2">职位管理</a></li>
+                                                <li><a id="wyb3">部门管理</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default mean_1_lx">
+                                    <div class="panel-heading list_1_lx cur_lx" data-toggle="collapse"data-parent="#accordion"href="#collapseFour">
+                                        <span class="glyphicon glyphicon-erase icon"></span>
+                                        <h4 class="h4">System Information</h4>
+                                    </div>
+                                    <div id="collapseFour" class="panel-collapse collapse fade">
+                                        <div class="panel-body">
+                                            <ul class="list-unstyled text_1_lx text-center">
+                                                <li><a id="information1" onclick="rzyl()">日志一览</a></li>
+                                                <li><a id="information2" onclick="xxyl()">信息一览</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row"style="height: 19%;background:#A58B79">
+                        <div class="col-md-12"></div>
+                    </div>
+                </div>
+                <!-----------------left结束------------------------->
+
+                <!-----------------right开始-------------------------------------->
+                <div class="col-md-10" style="height: 100%">
+                    <div class="row"style="height: 5%;">
+                        <div class="col-12" >
+                            <div class="box_lx_2">
+                                <span class="user">您好！<label id="name_lx"></label></span>
+                                <button class="log_off_lx" data-toggle="modal" data-target="#myModal">注销</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--------提示框开始------------->
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header header_lx">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">注意</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <span>是否确认注销用户？</span>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                                    <button type="button" class="btn btn-primary yes">Yes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--------提示框结束---------------->
+
+                    <div class="row" style="height: 65%;padding: 0 200px 0 200px">
+                            <!-------------------------------->
+
+                        <div class="col-md-12 s2 s Gl">
+                            <div class="row">
+                                <div class="col-md-12 text-center" >
+                                    <h2 style="color: white">学校管理</h2>
+                                </div>
+                            </div>
+                            <div class="row">
+                            <div class="col-md-3 s Gl">
+                                <div class="col-md-12 box Gl" style="border-right: 1px solid #DDDDDD">
+                                    <ul class="ul ">
+                        <span>
+                            <span class="glyphicon glyphicon-folder-open" style="line-height: 50px;border-bottom: 1px solid #DDDDDD;color: #6F4E3B"> <b style="color: black">四川省</b></span><br/>
+                        </span>
+                                        <li class="li">成都市</li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-9 s Gl">
+                                <div class="box2">
+                                    <table class="table table-bordered table_1_wyb" style="position: absolute;top: 10px;background-color: white">
+                                        <tr style="height: 52px;line-height: 52px ">
+                                            <th>学校名称</th>
+                                            <th>校长</th>
+                                            <th>录入时间</th>
+                                            <th>状态</th>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="box1"  style="OVERFLOW-Y: auto; OVERFLOW-X:hidden;">
+                                    <table class="table table-bordered table_1_wyb showTable1 nn ">
+
+                                    </table>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="row text-center">
+                                <div class="col-md-1 a1 ">
+
+                                </div>
+                            <div class="col-md-2 a1 ">
+                                <button class="btn btn-warning" id="an1-Gl">录入新学校</button>
+                            </div>
+                            <div class="col-md-2 a1">
+                                <button class="btn btn-warning" id="an2Gl">查看学校信息</button>
+                            </div>
+                            <div class="col-md-2  a1">
+                                <button  class="btn btn-warning" id="an3-Gl">修改学校信息</button>
+                            </div>
+                            <div class="col-md-2  a1">
+                                <button class="btn btn-warning" id="an4-Gl">申请立项</button>
+                            </div>
+                            <div class="col-md-2  a1">
+                                <button class="btn btn-warning" id="an5-Gl">审核</button>
+                            </div>
+
+                            </div>
+                        </div>
+                        <!---------------------------点击 录入新学校 按钮 页面--------------------------->
+                        <div class="col-md-10 col-md-offset-1 kk Gl">
+                            <div class="col-md-12 k ">
+                                <h3>录入新学校</h3>
+                            </div>
+                            <from>
+                                <div class="col-md-12 ">
+                                    <div class="col-md-6">
+                                        <div class="col-md-12 w2">
+                                            <label for="w1">学校名称</label>
+                                            <input type="text" id="w1"/>
+                                        </div>
+                                        <div class="col-md-12 w2">
+                                            <label for="w2">学校地址</label>
+                                            <input type="text" id="w2"/>
+                                        </div>
+                                        <div class="col-md-12 w2">
+                                            <label for="w3">联系电话</label>
+                                            <input type="text" id="w3" class="modifymothertel"  name="phone" maxlength=11 onblur="if(/\d{11}/gi.test(this.value)?true:false){$('#w3').css({border:'1px solid green'});}else{$('#w3').css({border:'1px solid red'});xx_Gl('请输入正确的号码')}">
+                                            <span class="glyphicon  form-control-feedback" aria-hidden="true"></span>
+
+                                        </div>
+                                        <div class="col-md-12 w2">
+                                            <label for="w4">老师人数</label>
+                                            <input type="number" id="w4"/>
+                                        </div>
+                                        <div class="col-md-12 w2">
+                                            <label for="w5">负责部门</label>
+                                            <!--<select name="cars" id="w5">-->
+                                                <!--<option value="推广部">推广部</option>-->
+                                                <!--<option value="人事部">人事部</option>-->
+                                                <!--<option value="财务部" selected="selected">财务部</option>-->
+                                                <!--<option value="行政部">行政部</option>-->
+                                            <!--</select>-->
+                                            <input type="text" id="w5"/>
+                                        </div>
+                                        <div class="col-md-12 w2">
+                                            <label for="w6">负 责 人</label>
+                                            <!--<select name="cars" id="w6">-->
+                                                <!--<option value="赵晓峰">赵晓峰</option>-->
+                                                <!--<option value="叶良辰">叶良辰</option>-->
+                                                <!--<option value="赵日天" selected="selected">赵日天</option>-->
+                                                <!--<option value="李斩魔">李斩魔</option>-->
+                                            <!--</select>-->
+                                            <input type="text" id="w6"/>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="col-md-12 w2">
+                                            <label for="w7">所属城市</label>
+                                            <select name="cars" id="w7">
+                                                <option value="成都市" selected="selected">成都市</option>
+                                                <!--<option value="绵阳市">绵阳市</option>-->
+                                                <!--<option value="雅安市" >雅安市</option>-->
+                                                <!--<option value="乐山市">乐山市</option>-->
+                                            </select>
+                                            <!--<input type="text" id="w7"/>-->
+                                        </div>
+                                        <div class="col-md-12 w2">
+                                            <label for="w8">校长</label>
+                                            <input type="text" id="w8"/>
+                                        </div>
+                                        <div class="col-md-12 w2">
+                                            <label for="w9">学生人数</label>
+                                            <input type="number" id="w9"/>
+                                        </div>
+                                        <div class="col-md-12 w2">
+                                            <label for="w10">说明</label>
+                                        <textarea rows="10" cols="30" id="w10" style="width: 260px;height: 100px;max-width: 315px;max-height: 150px">
+                                            说明由你来
+                                        </textarea>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="col-md-4  Gl"></div>
+                                    <div class="col-md-2 col-md-offset-3  Gl">
+                                        <button class="btn btn-default" id="add3">添加</button>
+                                    </div>
+                                    <div class="col-md-2 col-md-offset-2  Gl">
+                                        <button class="btn btn-default" id="close1-Gl">取消</button>
+                                    </div>
+                                </div>
+                            </from>
+                            <div class="col-md-12 k1"></div>
+                        </div>
+                        <!---------------------------添加沟通记录页面--------------------------->
+                        <div class="col-md-6 col-md-offset-3 ky2 Gl">
+                            <div class="col-md-12 k">
+                                <h4>添加沟通记录</h4>
+                            </div>
+                            <div class="col-md-12 w2">
+                                <label for="p16Gl">沟通时间</label>
+                                <input type="date"  class="laydate-icon" id="p16Gl"/>
+
+                            </div>
+                            <div class="col-md-12 w2">
+                                <label for="p17Gl">校方联系人</label>
+                                <input type="text" id="p17Gl"/>
+                            </div>
+                            <div class="col-md-12 w2">
+                                <label for="p18Gl">职务</label>
+                                <input type="text" id="p18Gl"/>
+                            </div>
+                            <div class="col-md-12 w2">
+                                <label for="p19Gl">联系人</label>
+                                <!--<select name="cars" id="p19Gl">-->
+                                    <!--<option value="李杀神">李杀神</option>-->
+                                    <!--<option value="刘斩仙">刘斩仙</option>-->
+                                    <!--<option value="王诛魔">王诛魔</option>-->
+                                <!--</select>-->
+                                <input type="text" id="p19Gl"/>
+                            </div>
+                            <div class="col-md-12 w2">
+                                <label for="p20Gl">学校名称</label>
+                                <input type="text" id="p20Gl"/>
+                            </div>
+                            <div class="col-md-12 w2">
+                                <label for="h4">内容</label>
+                                <textarea rows="10" cols="30" id="h4" style="width: 260px;height: 100px;max-width: 300px;max-height: 150px">说明由你来</textarea>
+                            </div>
+                            <div class="col-md-12 w2">
+                                <div class="col-md-3  a2 Gl"></div>
+                                <div class="col-md-2 col-md-offset-3 a2 Gl">
+                                    <button class="btn btn-default" id="add4">添加</button>
+                                </div>
+                                <div class="col-md-2 col-md-offset-2 a2 Gl">
+                                    <button  class="btn btn-default" id="close3-Gl">取消</button>
+                                </div>
+                            </div>
+                            <div class="col-md-12 k1"></div>
+                        </div>
+
+                        <!---------------------------查看学校信息 页面--------------------------->
+                        <div class="col-md-11  ky1 Gl">
+                            <div class="col-md-12 k ">
+                                <h4>查看学校信息</h4>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="col-md-4">
+                                    <div class="col-md-12 w2">
+                                        <label for="p1Gl">学校名称</label>
+                                        <p id="p1Gl"></p>
+                                    </div>
+                                    <div class="col-md-12 w2">
+                                        <label for="p2Gl">联系电话</label>
+                                        <p id="p2Gl"></p>
+                                    </div>
+                                    <div class="col-md-12 w2">
+                                        <label for="p3Gl">老师人数</label>
+                                        <p id="p3Gl"></p>
+                                    </div>
+                                    <div class="col-md-12 w2">
+                                        <label for="p4Gl">负责人</label>
+                                        <p id="p4Gl"></p>
+                                    </div>
+                                    <div class="col-md-12 w2">
+                                        <label for="p5Gl">申请立项时间</label>
+                                        <p id="p5Gl"></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="col-md-12 w2">
+                                        <label for="p6Gl">所属城市</label>
+                                        <p id="p6Gl"></p>
+                                    </div>
+                                    <div class="col-md-12 w2">
+                                        <label for="p7Gl">校长</label>
+                                        <p id="p7Gl"></p>
+                                    </div>
+                                    <div class="col-md-12 w2">
+                                        <label for="p8Gl">负责部门</label>
+                                        <p id="p8Gl"></p>
+                                    </div>
+                                    <div class="col-md-12 w2">
+                                        <label for="p9Gl">状态</label>
+                                        <p id="p9Gl"></p>
+                                    </div>
+                                    <div class="col-md-12 w2">
+                                        <label for="p10Gl">立项批准时间</label>
+                                        <p id="p10Gl"></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="col-md-12 w2">
+                                        <label for="p11Gl">学校地址</label>
+                                        <p id="p11Gl"></p>
+                                    </div>
+                                    <div class="col-md-12 w2">
+                                        <label for="p12Gl">学生人数</label>
+                                        <p id="p12Gl"></p>
+                                    </div>
+                                    <div class="col-md-12 w2">
+                                        <label for="p13Gl">说明</label>
+                                        <p id="p13Gl"></p>
+                                    </div>
+                                    <div class="col-md-12 w2">
+                                        <label for="p14Gl">录入时间</label>
+                                        <p id="p14Gl"></p>
+                                    </div>
+                                    <div class="col-md-12 w2">
+                                        <label for="p15Gl">审批意见</label>
+                                        <p id="p15Gl"></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+
+                                <div class="col-md-9">
+                                    <fieldset>
+                                        <legend>沟通记录</legend>
+                                        <table class="table table-bordered table_1_wyb kL">
+                                            <tr>
+                                                <th>时间</th>
+                                                <th>校方联系人</th>
+                                                <th>职务</th>
+                                                <th>沟通人</th>
+                                                <th>沟通内容</th>
+                                            </tr>
+                                        </table>
+                                        <div class="col-md-12 ni" style="height: 144px;OVERFLOW-Y: auto; OVERFLOW-X:hidden;">
+                                        <table class="table table-bordered table_1_wyb showTable4" >
+
+                                        </table>
+                                        </div>
+                                    </fieldset>
+                                </div>
+
+
+                                <div class="col-md-3">
+                                    <button class="btn btn-default" id="add1-Gl">添加沟通记录</button>
+                                </div>
+                                <div class="col-md-2 col-md-offset-5 nj Gl">
+                                    <button  class="btn btn-default" id="close2-Gl">确认</button>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-md-12 k1"></div>
+                        </div>
+                        <!---------------------------修改学校信息 页面--------------------------->
+                        <div class="col-md-11  ky3 Gl">
+                            <div class="col-md-12 k ">
+                                <h4>修改学校信息</h4>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="col-md-4">
+                                    <div class="col-md-12 w2">
+                                        <label for="o1Gl">学校名称</label>
+                                        <input id="o1Gl">
+                                    </div>
+                                    <div class="col-md-12 w2">
+                                        <label for="o2Gl">联系电话</label>
+                                        <input type="text" id="o2Gl"  name="phone" maxlength=11 onblur="if(/\d{11}/gi.test(this.value)?true:false){$('#o2Gl').css({border:'1px solid green'});}else{$('#o2Gl').css({border:'1px solid red'});xx_Gl('请输入正确的号码')}">
+                                    </div>
+                                    <div class="col-md-12 w2">
+                                        <label for="o3Gl">老师人数</label>
+                                        <input type="number" id="o3Gl">
+                                    </div>
+                                    <div class="col-md-12 w2">
+                                        <label for="o4Gl">负责人</label>
+                                        <input id="o4Gl">
+                                    </div>
+                                    <div class="col-md-12 w2">
+                                        <label for="o5Gl">申请立项时间</label>
+                                        <input  id="o5Gl">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="col-md-12 w2">
+                                        <label for="o6Gl">所属城市</label>
+                                        <input  id="o6Gl">
+                                    </div>
+                                    <div class="col-md-12 w2">
+                                        <label for="o7Gl">校长</label>
+                                        <input  id="o7Gl">
+                                    </div>
+                                    <div class="col-md-12 w2">
+                                        <label for="o8Gl">负责部门</label>
+                                        <input  id="o8Gl">
+                                    </div>
+                                    <div class="col-md-12 w2">
+                                        <label for="o9Gl">状态</label>
+                                        <input  id="o9Gl">
+                                    </div>
+                                    <div class="col-md-12 w2">
+                                        <label for="o10Gl">立项批准时间</label>
+                                        <input  id="o10Gl">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="col-md-12 w2">
+                                        <label for="o11Gl">学校地址</label>
+                                        <input  id="o11Gl">
+                                    </div>
+                                    <div class="col-md-12 w2">
+                                        <label for="o12Gl">学生人数</label>
+                                        <input type="number" id="o12Gl">
+                                    </div>
+                                    <div class="col-md-12 w2">
+                                        <label for="o13Gl">说明</label>
+                                        <input  id="o13Gl">
+                                    </div>
+                                    <div class="col-md-12 w2">
+                                        <label for="o14Gl">录入时间</label>
+                                        <input  id="o14Gl">
+                                    </div>
+                                    <div class="col-md-12 w2">
+                                        <label for="o15Gl">审批意见</label>
+                                        <input  id="o15Gl">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="col-md-4  Gl">
+
+                                </div>
+                                <div class="col-md-2   Gl">
+                                    <button class="btn btn-default" id="close4-Gl">确认</button>
+                                </div>
+                                <div class="col-md-2   Gl">
+                                    <button  class="btn btn-default" id="close12-Gl">取消</button>
+                                </div>
+                            </div>
+                            <div class="col-md-12 k1"></div>
+                        </div>
+                        <!---------------------------申请立项页面--------------------------->
+                        <div class="col-md-8 col-md-offset-2 ky4 Gl">
+                            <div class="col-md-12 k ">
+                                <h4>申请立项</h4>
+                            </div>
+                            <div class="col-md-12">
+                                <h5 class="mingc"></h5><h5>申请立项已提交，等待批审</h5>
+                                <div class="col-md-12 kf"></div>
+                                <div class="col-md-5   Gl"></div>
+                                <div class="col-md-2 col-md-offset-5  Gl">
+                                    <button class="btn btn-default" id="close5-Gl">确认</button>
+                                </div>
+                            </div>
+                            <div class="col-md-12 k1"></div>
+                        </div>
+                        <!---------------------------审核页面--------------------------->
+                        <div class="col-md-11  ky5 Gl">
+                            <div class="col-md-12 k ">
+                                <h4>审批学校</h4>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="col-md-4">
+                                    <div class="col-md-12 w2">
+                                        <label for="u1Gl">学校名称</label>
+                                        <p id="u1Gl"></p>
+                                    </div>
+                                    <div class="col-md-12 w2">
+                                        <label for="u2Gl">联系电话</label>
+                                        <p id="u2Gl"></p>
+                                    </div>
+                                    <div class="col-md-12 w2">
+                                        <label for="u3Gl">老师人数</label>
+                                        <p id="u3Gl"></p>
+                                    </div>
+                                    <div class="col-md-12 w2">
+                                        <label for="u4Gl">负责人</label>
+                                        <p id="u4Gl"></p>
+                                    </div>
+                                    <div class="col-md-12 w2">
+                                        <label for="u5Gl">申请立项时间</label>
+                                        <p id="u5Gl"></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="col-md-12 w2">
+                                        <label for="u6Gl">所属城市</label>
+                                        <p id="u6Gl"></p>
+                                    </div>
+                                    <div class="col-md-12 w2">
+                                        <label for="u7Gl">校长</label>
+                                        <p id="u7Gl"></p>
+                                    </div>
+                                    <div class="col-md-12 w2">
+                                        <label for="u8Gl">负责部门</label>
+                                        <p id="u8Gl"></p>
+                                    </div>
+                                    <div class="col-md-12 w2">
+                                        <label for="u9Gl">状态</label>
+                                        <p id="u9Gl"></p>
+                                    </div>
+                                    <div class="col-md-12 w2">
+                                        <label for="u10Gl">立项批准时间</label>
+                                        <p id="u10Gl"></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="col-md-12 w2">
+                                        <label for="u11Gl">学校地址</label>
+                                        <p id="u11Gl"></p>
+                                    </div>
+                                    <div class="col-md-12 w2">
+                                        <label for="u12Gl">学生人数</label>
+                                        <p id="u12Gl"></p>
+                                    </div>
+                                    <div class="col-md-12 w2">
+                                        <label for="u13Gl">说明</label>
+                                        <p id="u13Gl"></p>
+                                    </div>
+                                    <div class="col-md-12 w2">
+                                        <label for="u14Gl">录入时间</label>
+                                        <p id="u14Gl"></p>
+                                    </div>
+                                    <div class="col-md-12 w2">
+                                        <label for="u15Gl">审批意见</label>
+                                        <p id="u15Gl"></p>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-12 w2">
+                                <div class="col-md-3  Gl">
+                                </div>
+                                <div class="col-md-2 col-md-offset-2  Gl">
+                                    <button class="btn btn-default" id="close6-Gl">批准立项</button>
+                                </div>
+                                <div class="col-md-2 col-md-offset-1  Gl">
+                                    <button class="btn btn-default" id="close7-Gl">驳回立项</button>
+                                </div>
+                                <div class="col-md-2 col-md-offset-1  Gl">
+                                    <button  class="btn btn-default" id="close8-Gl">取消</button>
+                                </div>
+                            </div>
+                            <div class="col-md-12 k1"></div>
+                        </div>
+
+
+                        <!--警告框-->
+                        <div id="myAlert" class="alert alert-danger alert_Gl" >
+                            <!-- <a href="#" class="close" data-dismiss="alert" >&times;</a><br>-->
+                            <strong class="txt_Gl text-center"></strong><br/>
+                            <!--     <button class="btn btn-info btn_lx">确定</button>-->
+                        </div>
+
+
+
+
+
+                    </div>
+                        <!--------------------------------->
+                    <div class="row" style="height: 30%;">
+                        <div class="col-12">
+                            <div class="ipad-with-video hidden-xs ">
+                                <img src="img/tu7998_8.jpg" alt=""/>
+                                <!--  <a href="https://www.youtube.com/embed/TzIhH_V2mEU?rel=0" data-width="100%" data-toggle="lightbox" class="video&#45;&#45;wrapper fresco" data-fresco-options="rel: 0">
+                                      <video width="598" height="290" controls="false" autoplay="autoplay" loop="true" >
+                                          <source src="https://webassets.desk.com/assets/videos/desk-overview-loop.mp4" type="video/mp4">
+                                          Sorry, this video is not supported.
+                                      </video>
+                                  </a>
+                              </div>-->
+                            </div>
+                        </div>
+                    </div>
+                            </div>
+                    <!-----------------right结束-------------------------------------->
+                </div>
+            </div>
+            <!-- ===============content结束===============-->
+        </div>
+    </div>
+</div>
+    </div>
+<script>
+/*    $(".yes").click(function(){
+        window.location.href="index.html";
+    });
+    $(".list_1_lx").click(function(){
+        window.location.href="system.html";
+    });*/
+    $("#G_L_1").click(function(){
+        window.location.href="G_L1.html";
+    });
+    $("#G_L_2").click(function(){
+        window.location.href="G_L2.html";
+    });
+   /* $(".W_Q").click(function(){
+        window.location.href="W_Q1.html";
+    });*/
+    $("#name_lx").text(localStorage.user);
+    //  系统信息
+    $("#xitong").on("click",function(){
+        $("#xitongxinxi").show();
+        $("#one").hide();
+        $("#two").hide();
+    })
+    //    显示隐藏information
+    $("#information1").on("click",function(){
+        $("#xitongxinxi").hide();
+        $("#one").show();
+        $("#two").hide();
+    })
+    $("#information2").on("click",function(){
+        $("#two").show();
+        $("#xitongxinxi").hide();
+        $("#one").hide();
+
+    })
+   // <!-- 查找的弹出框-->
+    $(".btn4").click(function(){
+        $(".tiankuang").show();
+    })
+    $(".btn10").click(function(){
+        $(".tiankuang2").show();
+    })
+
+$('.modifymothertel').focus(function(){
+    $(this).next('span').css({display:'none'});
+    $(this).css({borderColor:"#26FFF3"})
+})
+$('.modifymothertel').blur(function(){
+    var modifymothertel=$('.modifymothertel').val();
+    var reg=/^1[34578]\d{9}$/;
+    inp8=reg.test(modifymothertel);
+    if(inp8){
+        $(this).css({borderColor:'green'});
+        $(this).next('span').css({color:'green',display:'inline-block'});
+        $(this).next('span').removeClass('glyphicon-remove');
+        $(this).next('span').addClass('glyphicon-ok');
+        $(this).next('span').attr('aria-hidden','true');
+        console.log('but');
+    }else{
+        $(this).css({borderColor:'red'});
+        $(this).next('span').removeClass('glyphicon-ok');
+        $(this).next('span').addClass('glyphicon-remove');
+        $(this).next('span').css({color:'red',display:'inline-block'});
+        $(this).next('span').attr('aria-hidden','false');
+        console.log('but');
+    }
+});
+// 警告框
+function xx_Gl(x){
+    $(".alert_Gl").fadeIn();
+    $(".txt_Gl").text(x)
+    setTimeout(function(){
+        $(".alert_Gl").fadeOut(500);
+    },1500);
+}
+
+</script>
+<script src="js/fangfa_lx.js"></script>
+</body>
+</html>

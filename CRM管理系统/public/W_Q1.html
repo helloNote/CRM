@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>teacher</title>
+    <link rel="stylesheet" href="lib/css/bootstrap.main.css"/>
+    <link rel="stylesheet" href="css/page.css"/>
+    <link rel="stylesheet" href="css/teacher.css"/>
+    <link rel="Shortcut Icon" href="img/tupian.png">
+    <script src="lib/js/jquery-1.11.1.min.js"></script>
+    <script src="lib/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<div class="img_lx">
+
+    <div class="box_lx">
+
+        <div id="tktk" class="alert alert-danger alert_lx" >
+            <strong class="txt_lx text-center">添加成功</strong><br/>
+        </div>
+
+        <div id="tktk2" class="alert alert-danger alert_lx" >
+            <strong class="txt_lx text-center">请检查格式是否错误</strong><br/>
+        </div>
+
+
+        <div id="tktk3" class="alert alert-danger alert_lx" >
+            <strong class="txt_lx text-center">未输入完整</strong><br/>
+        </div>
+
+
+        <div id="tktk4" class="alert alert-danger alert_lx" >
+            <strong class="txt_lx text-center">请选择要删除的数据</strong><br/>
+        </div>
+
+
+        <div id="tktk5" class="alert alert-danger alert_lx" >
+            <strong class="txt_lx text-center">删除成功</strong><br/>
+        </div>
+
+
+        <div id="tktk6" class="alert alert-danger alert_lx" >
+            <strong class="txt_lx text-center">请选择要修改的数据</strong><br/>
+        </div>
+
+
+        <div id="tktk7" class="alert alert-danger alert_lx" >
+            <strong class="txt_lx text-center">请检查格式是否错误</strong><br/>
+        </div>
+
+
+        <div id="tktk8" class="alert alert-danger alert_lx" >
+            <strong class="txt_lx text-center">修改成功</strong><br/>
+        </div>
+
+
+
+
+
+
+        <!-- ===============content开始===============-->
+        <div class="container-fluid wrap_lx">
+            <div class="row" style="height: 100%;width: 100%">
+
+                <!-----------------left开始------------------------->
+                <div class="col-md-2" style="height: 100%" >
+
+                    <div class="row" style="height: 19%;background: #A58B79">
+                        <div class="col-md-12 text-center">
+                            <span class="pic_lx"></span>
+                            <p class="text_lx">苦尽甘来的味道</p>
+                        </div>
+                    </div>
+
+                    <div class="row" style="height: 62%;background: white">
+                        <div class="col-md-12 text-center">
+
+                            <div class="panel-group mean_lx" id="accordion">
+                                <div class="panel panel-default mean_1_lx">
+                                    <div class="panel-heading G_L cur_lx" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                        <span class="glyphicon glyphicon-education icon"></span>
+                                        <h4 class="h4">School Administration</h4>
+                                    </div>
+                                    <div id="collapseOne" class="panel-collapse collapse fade">
+                                        <div class="panel-body">
+                                            <ul class="list-unstyled text_1_lx">
+                                                <li><a id="G_L_1">学校活动</a></li>
+                                                <li><a id="G_L_2">学校管理</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default mean_1_lx">
+                                    <div class="panel-heading W_Q cur_lx" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                        <span class="glyphicon glyphicon-user icon"></span>
+                                        <h4 class="h4">User Management</h4>
+                                    </div>
+                                    <div id="collapseTwo" class="panel-collapse collapse list_1_1_lx fade in">
+                                        <div class="panel-body">
+                                            <ul class="list-unstyled text_1_lx">
+                                                <li><a id="w_q">老师管理</a></li>
+                                                <li><a id="l_c">学生管理</a></li>
+                                                <li><a id="l_s_l">班级管理</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default mean_1_lx">
+                                    <div class="panel-heading w_y_b cur_lx" data-toggle="collapse"data-parent="#accordion"href="#collapseThree">
+                                        <span class="glyphicon glyphicon-file icon"></span>
+                                        <h4 class="h4">Data Management</h4>
+                                    </div>
+                                    <div id="collapseThree" class="panel-collapse collapse fade">
+                                        <div class="panel-body">
+                                            <ul class="list-unstyled text_1_lx">
+                                                <li><a id="wyb1">人员管理</a></li>
+                                                <li><a id="wyb2">职位管理</a></li>
+                                                <li><a id="wyb3">部门管理</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default mean_1_lx">
+                                    <div class="panel-heading list_1_lx  cur_lx" data-toggle="collapse"data-parent="#accordion"href="#collapseFour">
+                                        <span class="glyphicon glyphicon-erase icon"></span>
+                                        <h4 class="h4">System Information</h4>
+                                    </div>
+                                    <div id="collapseFour" class="panel-collapse collapse fade">
+                                        <div class="panel-body">
+                                            <ul class="list-unstyled text_1_lx text-center">
+                                                <li><a id="information1" onclick="rzyl()">日志一览</a></li>
+                                                <li><a id="information2" onclick="xxyl()">信息一览</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row"style="height: 19%;background:#A58B79">
+                        <div class="col-md-12"></div>
+                    </div>
+                </div>
+                <!-----------------left结束------------------------->
+
+                <!-----------------right开始-------------------------------------->
+                <div class="col-md-10" style="height: 100%">
+                    <div class="row"style="height: 5%;">
+                        <div class="col-12" >
+                            <div class="box_lx_2">
+                                <span class="user">您好！<label id="name_lx">Jack</label></span>
+                                <button class="log_off_lx" data-toggle="modal" data-target="#myModal">注销</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--------提示框开始------------->
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header header_lx">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">注意</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <span>是否确认注销用户？</span>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                                    <button type="button" class="btn btn-primary yes">Yes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--------提示框结束---------------->
+
+                    <div class="row" style="height: 65%;padding: 0 200px 0 200px">
+                            <!-------------------------------->
+                        <div class="col-md-12 colstudentlc">
+                            <div class="countentLc" >
+                                <!--标题-->
+                                <div class="row colH1lc">
+                                    <h2 style="text-align: center ;color: white">教师一览</h2>
+                                    <br/>
+                                </div>
+                                <!--管理内容-->
+                                <div class="row formLc" style="position: relative">
+                                    <!--学校导航栏-->
+                                    <div class="col-md-3 formMessagelc axax" style="background-color: #ffffff;border-right: 1px solid #DDDDDD">
+                                        <div class="row" style="margin-top: 20px">
+                                            <ul class="nav nav-pills nav-stacked">
+                                                <li role="presentation" class="active">
+
+                                                    <a href="#" style="background-color:white;color: #333333; "><span class="glyphicon glyphicon-folder-open tubiao" style="color: #6F4E3B"></span>四川省</a>
+                                                </li>
+                                                <li role="presentation" class="dropdown">
+                                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="background-color:white;color: #333333; ">
+                                                        <span class="glyphicon glyphicon-file tubiao " style="color: #6F4E3B;margin-left: 10px;"></span>成都市
+                                                    </a>
+                                                    <ul class="dropdown-menu">
+                                                        <li id="diyi" class="dix">成都外国语大学</li>
+                                                        <li id="dier" class="dex">成都万胜大学</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!--学生信息-->
+                                    <!--第一学校-->
+                                    <!--这里是弹框-->
+
+
+
+                                    <!--<div id="tktk" class="alert alert-danger alert_lx" >-->
+                                        <!--<strong class="txt_lx text-center">添加成功</strong><br/>-->
+                                    <!--</div>-->
+                                    <!-- -->
+                                    <!--<div id="tktk2" class="alert alert-danger alert_lx" >-->
+                                        <!--<strong class="txt_lx text-center">请检查格式是否错误</strong><br/>-->
+                                    <!--</div>-->
+                                    <!-- -->
+
+                                    <!--<div id="tktk3" class="alert alert-danger alert_lx" >-->
+                                        <!--<strong class="txt_lx text-center">未输入完整</strong><br/>-->
+                                    <!--</div>-->
+                                    <!-- -->
+
+                                    <!--<div id="tktk4" class="alert alert-danger alert_lx" >-->
+                                        <!--<strong class="txt_lx text-center">请选择要删除的数据</strong><br/>-->
+                                    <!--</div>-->
+                                    <!-- -->
+
+                                    <!--<div id="tktk5" class="alert alert-danger alert_lx" >-->
+                                        <!--<strong class="txt_lx text-center">删除成功</strong><br/>-->
+                                    <!--</div>-->
+                                    <!-- -->
+
+                                    <!--<div id="tktk6" class="alert alert-danger alert_lx" >-->
+                                        <!--<strong class="txt_lx text-center">请选择要修改的数据</strong><br/>-->
+                                    <!--</div>-->
+                                    <!-- -->
+
+                                    <!--<div id="tktk7" class="alert alert-danger alert_lx" >-->
+                                        <!--<strong class="txt_lx text-center">请检查格式是否错误</strong><br/>-->
+                                    <!--</div>-->
+                                    <!-- -->
+
+                                    <!--<div id="tktk8" class="alert alert-danger alert_lx" >-->
+                                        <!--<strong class="txt_lx text-center">修改成功</strong><br/>-->
+                                    <!--</div>-->
+
+
+                                    <!--弹框结束-->
+
+                                    <div class="col-md-9 formCountentlc" style="padding: 0">
+                                        <!--学生表格-->
+                                        <table class="table table-condensed table-bordered table-hover_w_q" style="background-color: #ffffff;" id="biao">
+                                            <thead id="tr_wq">
+                                            <tr >
+                                                <th class="headerstudentinflc">教师姓名</th>
+                                                <th class="headersex">性别</th>
+                                                <th class="headerclass">所授科目</th>
+                                                <th class="headertel">所带班级</th>
+                                                <th class="headertel2">联系电话</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+
+
+                                    <!--结束-->
+
+
+
+                                    <div class="row" style="margin-top: 350px">
+                                        <div class="col-md-4 text-center" >
+                                            <button  id="tianjia"  class="btn btn-warning" >添加教师</button>
+                                        </div>
+
+                                        <div class="col-md-4 text-center">
+                                            <button  id="shang" class="btn btn-warning ">删除教师</button>
+                                        </div>
+
+                                        <div class="col-md-4 text-center" >
+                                            <button id="xiuga" class="btn btn-warning " >修改教师信息</button>
+                                        </div>
+                                    </div>
+
+                                    <br/>
+
+
+                                </div>
+
+                            </div>
+                            <!--添加页面-->
+                            <div class="addinf tian" id="tianj">
+                                <div class="countainer addinfcont">
+                                    <!--添加老师信息-->
+                                    <div class="row headeradd">
+                                        <h3>添加老师信息</h3>
+                                    </div>
+                                    <!--添加老师基本信息-->
+                                    <div class="row headeradd">
+                                        <div class="countainer">
+
+                                            <div class="row addinflc xinmin">
+                                                <div class="col-md-11 col-md-offset-1">
+                                                    <label class="col-sm-3" for="namelc">姓名</label>
+                                                    <div class="col-sm-8">
+                                                        <input class="form-control" type="text" maxlength="6" id="namelc">
+                                                        <div class="zqm">请输入正确的名字格式</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row addinflc">
+                                                <div class="col-md-11 col-md-offset-1">
+                                                    <label class="col-sm-3 col-md-offset-3">性别</label>
+                                                    <label class="radio-inline col-sm-3">
+                                                        <input type="radio" name="inlineRadioOptions" name1="男" id="inlineRadio1" value="option1"> &nbsp;&nbsp;男
+                                                    </label>
+                                                    <label class="radio-inline col-sm-3">
+                                                        <input type="radio" name="inlineRadioOptions" name1="女" id="inlineRadio2" value="option2"> &nbsp;&nbsp;女
+                                                    </label>
+                                                </div>
+                                            </div>
+
+                                            <div class="row addinflc ssk">
+                                                <div class="col-md-11 col-md-offset-1">
+                                                    <label class="col-sm-3" for="namelc">所授科目</label>
+                                                    <div class="col-sm-8">
+                                                        <input class="form-control" type="text" maxlength="4" id="sskm">
+                                                        <div class="zqk">请输入正确的科目格式</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="row addinflc sdb">
+                                                <div class="col-md-11 col-md-offset-1">
+                                                    <label class="col-sm-3" for="namelc">所带班级</label>
+                                                    <div class="col-sm-8">
+                                                        <input class="form-control" maxlength="4" type="text" id="sdbj">
+                                                        <div class="zqb">请输入正确的班级格式</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="row addinflc lxd">
+                                                <div class="col-md-11 col-md-offset-1">
+                                                    <label class="col-sm-3">联系电话</label>
+                                                    <div class="col-sm-8">
+                                                        <input class="form-control" maxlength="11" type="tel" id="lxdh">
+                                                        <div class="zqd">请输入正确的电话格式</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row addinflc">
+                                                <div class="col-md-11 col-md-offset-1">
+                                                    <label for="classselect" class="col-sm-3">所属地区</label>
+                                                    <select class="form-control col-sm-7 col-sm-1" style="width: 230px;margin-left: 10px" id="classselect">
+                                                        <option>成都市</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="row addinflc">
+                                                <div class="col-md-11 col-md-offset-1">
+                                                    <label for="classselect" class="col-sm-3">所属学校</label>
+                                                    <select class="form-control col-sm-7 col-sm-1" style="width: 230px;margin-left: 10px" id="classselect1">
+                                                        <option id="dyxx" name1="1">成都外国语大学</option>
+                                                        <option id="drxx" name1="2">成都万胜大学</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <br/>
+
+                                            <div class="row">
+                                                <div class="col-md-4 text-center">
+                                                    <button id="tian"  class="btn btn-default " >添加</button>
+                                                </div>
+
+                                                <div class="col-md-offset-4 col-md-4 text-center">
+                                                    <button id="quxiao" class="btn btn-default   " >取消</button>
+                                                </div>
+
+                                            </div>
+
+                                            <br/>
+
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!--删除页面-->
+
+                            <div class="addinf sanc" id="shana" style="height: 300px;">
+                                <div class=" addinfcont container-fluid">
+                                    <!--删除学生基本信息-->
+                                    <div class="row headeradd" style="height: 200px">
+
+                                        <div class="col-md-offset-3 col-md-9" style="font-size: 30px;color: red">确定要删除吗？</div>
+                                        <br/>
+
+                                        <div class="row" style="margin-top: 100px">
+                                            <div class="col-md-4 text-center">
+                                                <button class="btn btn-default" id="sanchu">删除</button>
+                                            </div>
+
+                                            <div class="col-md-offset-4 col-md-4 text-center" id="quxi">
+                                                <button class="btn btn-default" >取消</button>
+                                            </div>
+
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+
+
+                            <!--修改教师信息-->
+
+                            <div class="addinf xiugai" id="xiu" style="height: 500px;">
+                                <div class="countainer addinfcont">
+                                    <!--修改学生基本信息-->
+                                    <div class="row headeradd" id="xiugai" style="height: 400px">
+
+                                        <div class="row addinflc">
+                                            <div class="col-md-11 col-md-offset-1">
+                                                <label class="col-sm-5" style="font-size: 20px;">教师姓名</label>
+                                                <div class="col-sm-6" id="jsxm">
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row addinflc">
+                                            <div class="col-md-11 col-md-offset-1">
+                                                <label class="col-sm-5" style="font-size: 20px;">性别</label>
+                                                <div class="col-sm-6" id="jsxb">
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row addinflc">
+                                            <div class="col-md-11 col-md-offset-1">
+                                                <label class="col-sm-5" style="font-size: 20px;">所授科目</label>
+                                                <div class="col-sm-6" id="jskm">
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row addinflc">
+                                            <div class="col-md-11 col-md-offset-1">
+                                                <label class="col-sm-5" for="namelc" style="font-size: 20px;">联系电话</label>
+                                                <div class="col-sm-6 ghm">
+                                                    <input class="form-control" id="ghmm" maxlength="11" type="tel">
+                                                    <div class="zqg">请输入正确的电话格式</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <br/><br/>
+
+                                        <div class="row">
+                                            <div id="tianja" class="col-md-4 text-center">
+                                                <button class="btn btn-default" >修改</button>
+                                            </div>
+
+                                            <div id="quxiaox" class="col-md-offset-4 col-md-4 text-center">
+                                                <button class="btn btn-default" >取消</button>
+                                            </div>
+
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                            <!--------------------------------->
+                    </div>
+                    <div class="row" style="height: 30%;">
+                        <div class="col-12">
+                            <div class="ipad-with-video hidden-xs ">
+                                <img src="img/tu7998_8.jpg" alt=""/>
+                                <!--  <a href="https://www.youtube.com/embed/TzIhH_V2mEU?rel=0" data-width="100%" data-toggle="lightbox" class="video&#45;&#45;wrapper fresco" data-fresco-options="rel: 0">
+                                      <video width="598" height="290" controls="false" autoplay="autoplay" loop="true" >
+                                          <source src="https://webassets.desk.com/assets/videos/desk-overview-loop.mp4" type="video/mp4">
+                                          Sorry, this video is not supported.
+                                      </video>
+                                  </a>
+                              </div>-->
+                            </div>
+                        </div>
+                    </div>
+                            </div>
+                    <!-----------------right结束-------------------------------------->
+                </div>
+            </div>
+            <!-- ===============content结束===============-->
+        </div>
+    </div>
+    </div>
+    </div>
+    <script>
+    $(".yes").click(function(){
+        window.location.href="index.html";
+    });
+    $(".list_1_lx").click(function(){
+        window.location.href="system.html";
+    });
+    $(".G_L").click(function(){
+        window.location.href="G_L1.html";
+    });
+    $("#w_q").click(function(){
+        window.location.href="W_Q1.html";
+    });
+    $("#l_c").click(function(){
+        window.location.href="L_C.html";
+    });
+    $("#l_s_l").click(function(){
+        window.location.href="lsl_1.html";
+    });
+
+    $("#name_lx").text(localStorage.user);
+
+</script>
+<script src="js/wangajax.js"></script>
+<script src="js/fangfa_lx.js"></script>
+</body>
+</html>

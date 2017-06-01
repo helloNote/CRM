@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>学校活动</title>
+    <link rel="stylesheet" href="lib/css/bootstrap.main.css"/>
+    <link rel="stylesheet" href="css/page.css"/>
+    <link rel="Shortcut Icon" href="img/tupian.png">
+    <link rel="stylesheet" href="css/gl.css"/>
+    <script src="lib/js/jquery-1.11.1.min.js"></script>
+    <script src="lib/js/bootstrap.min.js"></script>
+ <!--   <script src="js/Ajax.js"></script>-->
+    <script src="js/Gl.js"></script>
+    <script src="js/Ajax_Gl.js"></script>
+</head>
+<body>
+<div class="img_lx">
+    <div class="box_lx">
+        <!-- ===============content开始===============-->
+        <div class="container-fluid wrap_lx">
+            <div class="row" style="height: 100%;width: 100%">
+
+                <!-----------------left开始------------------------->
+                <div class="col-md-2" style="height: 100%" >
+
+                    <div class="row" style="height: 19%;background: #A58B79">
+                        <div class="col-md-12 text-center">
+                            <span class="pic_lx"></span>
+                            <p class="text_lx">苦尽甘来的味道</p>
+                        </div>
+                    </div>
+
+                    <div class="row" style="height: 62%;background: white">
+                        <div class="col-md-12 text-center">
+
+                            <div class="panel-group mean_lx" id="accordion">
+                                <div class="panel panel-default mean_1_lx">
+                                    <div class="panel-heading G_L cur_lx" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                        <span class="glyphicon glyphicon-education icon"></span>
+                                        <h4 class="h4">School Administration</h4>
+                                    </div>
+                                    <div id="collapseOne" class="panel-collapse collapse fade in">
+                                        <div class="panel-body">
+                                            <ul class="list-unstyled text_1_lx">
+                                                <li><a id="G_L_1">学校活动</a></li>
+                                                <li><a id="G_L_2">学校管理</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default mean_1_lx">
+                                    <div class="panel-heading W_Q cur_lx" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                        <span class="glyphicon glyphicon-user icon"></span>
+                                        <h4 class="h4">User Management</h4>
+                                    </div>
+                                    <div id="collapseTwo" class="panel-collapse collapse list_1_1_lx fade">
+                                        <div class="panel-body">
+                                            <ul class="list-unstyled text_1_lx">
+                                                <li><a>老师管理</a></li>
+                                                <li><a>学生管理</a></li>
+                                                <li><a>班级管理</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default mean_1_lx">
+                                    <div class="panel-heading w_y_b cur_lx" data-toggle="collapse"data-parent="#accordion"href="#collapseThree">
+                                        <span class="glyphicon glyphicon-file icon"></span>
+                                        <h4 class="h4">Data Management</h4>
+                                    </div>
+                                    <div id="collapseThree" class="panel-collapse collapse fade">
+                                        <div class="panel-body">
+                                            <ul class="list-unstyled text_1_lx">
+                                                <li><a id="wyb1">人员管理</a></li>
+                                                <li><a id="wyb2">职位管理</a></li>
+                                                <li><a id="wyb3">部门管理</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default mean_1_lx">
+                                    <div class="panel-heading list_1_lx  cur_lx" data-toggle="collapse"data-parent="#accordion"href="#collapseFour">
+                                        <span class="glyphicon glyphicon-erase icon"></span>
+                                        <h4 class="h4">System Information</h4>
+                                    </div>
+                                    <div id="collapseFour" class="panel-collapse collapse fade">
+                                        <div class="panel-body">
+                                            <ul class="list-unstyled text_1_lx text-center">
+                                                <li><a id="information1" onclick="rzyl()">日志一览</a></li>
+                                                <li><a id="information2" onclick="xxyl()">信息一览</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row"style="height: 19%;background:#A58B79">
+                        <div class="col-md-12"></div>
+                    </div>
+                </div>
+                <!-----------------left结束------------------------->
+
+                <!-----------------right开始-------------------------------------->
+                <div class="col-md-10" style="height: 100%">
+                    <div class="row"style="height: 5%;">
+                        <div class="col-12" >
+                            <div class="box_lx_2">
+                                <span class="user">您好！<label id="name_lx">Jack</label></span>
+                                <button class="log_off_lx" data-toggle="modal" data-target="#myModal">注销</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--------提示框开始------------->
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header header_lx">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">注意</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <span>是否确认注销用户？</span>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                                    <button type="button" class="btn btn-primary yes">Yes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--------提示框结束---------------->
+
+                    <div class="row" style="height: 65%;padding: 0 200px 0 200px">
+                            <!-------------------------------->
+
+                            <div class="col-md-12 s2 s Gl">
+                                <div class="row">
+                                    <div class="col-md-12 text-center">
+                                        <h2 style="color: white">学校活动</h2>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 s Gl">
+                                    <div class="col-md-12 box Gl "style="border-right: 1px solid #DDDDDD">
+                                        <ul class="ul">
+                        <span>
+                            <span class="glyphicon glyphicon-folder-open"style="line-height: 50px;border-bottom: 1px solid #DDDDDD;color: #6F4E3B"> <b style="color: black">四川省</b></span><br/>
+                        </span>
+                                            <li class="li">成都市</li>
+                                            <!--<li class="li">绵阳市</li>-->
+                                            <!--<li class="li">雅安市</li>-->
+                                            <!--<li class="li">乐山市</li>-->
+                                            <!--<li class="li">内江市</li>-->
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-9 s Gl">
+                                    <div class="box2">
+                                        <table class="table table-bordered table_1_wyb" style="position: absolute;background: white;top: 10px;">
+                                            <tr style="height: 52px;line-height: 52px">
+                                                <th>学校名称</th>
+                                                <th>校长</th>
+                                                <th>录入时间</th>
+                                                <th>状态</th>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="box1" style="OVERFLOW-Y: auto; OVERFLOW-X:hidden;">
+                                        <table class="table table-bordered table_1_wyb showTable1" >
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="txt_gl text-center" >
+                                    <div class="row">
+                                    <div class="col-md-3"></div>
+                                <div class="col-md-2  a1 Gl">
+                                    <button class="btn btn-warning" id="an1">查看活动信息</button>
+                                </div>
+                                <div class="col-md-2 a1 Gl">
+                                    <button class="btn btn-warning" id="an2">添加活动信息</button>
+                                </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!---------------------------查看活动信息页面--------------------------->
+                            <div class="col-md-9 col-md-offset-2 kk2  Gl">
+                                <div class="col-md-12 k">
+                                    <h4>活动记录一览</h4>
+                                </div>
+                                <div class="col-md-12 k jk" style="OVERFLOW-Y: auto; OVERFLOW-X:hidden;">
+                                    <table class="table table-bordered table_1_wyb kL">
+                                        <tr>
+                                            <th style="width: 16.6%">活动名称</th>
+                                            <th style="width: 16.6%">时间</th>
+                                            <th style="width: 16.6%">地点</th>
+                                            <th style="width: 16.6%">主题</th>
+                                            <th style="width: 16.6%">负责部门</th>
+                                            <th style="width: 16.6%">负责人</th>
+                                        </tr>
+                                    </table>
+                                    <table class="table table-bordered table_1_wyb showTable2">
+
+                                    </table>
+                                </div>
+                                <div class="col-md-12 k ">
+                                    <div class="col-md-3 col-md-offset-1 a1 Gl">
+                                        <button class="btn btn-default" id="an3">查看活动反馈</button>
+                                    </div>
+                                    <div class="col-md-3 col-md-offset-1 a1 Gl">
+                                        <button class="btn btn-default" id="an4">添加活动反馈</button>
+                                    </div>
+                                    <div class="col-md-3 col-md-offset-1 a1 Gl">
+                                        <button class="btn btn-default" id="close2">取消</button>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 k1"></div>
+                            </div>
+                            <!---------------------------点击    查看活动反馈按钮 活动反馈页面              -->
+                            <div class="col-md-7 col-md-offset-3 kk3 Gl">
+                                <div class="col-md-12 k">
+                                    <h4>活动反馈一览</h4>
+                                </div>
+                                <div class="col-md-12 k jk" style="OVERFLOW-Y: auto; OVERFLOW-X:hidden;" >
+                                    <table class="table table-bordered table_1_wyb kL">
+                                        <tr>
+                                            <th>采访人</th>
+                                            <th>被采访人</th>
+                                            <th>身份</th>
+                                            <th>反馈内容</th>
+                                        </tr>
+                                    </table>
+                                    <table class="table table-bordered table_1_wyb showTable3" >
+
+                                    </table>
+
+                                </div>
+                                <div class="col-md-12 k">
+                                    <div class="col-md-3 col-md-offset-4 a1 Gl">
+                                        <button  class="btn btn-default" id="close3">确认</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!---------------------------点击    添加活动反馈按钮 添加活动反馈页面              -->
+                            <div class="col-md-6 col-md-offset-3 kk4 Gl">
+                                <div class="col-md-12 k">
+                                    <h4>添加活动反馈</h4>
+                                </div>
+                                <div class="col-md-12 w2">
+                                    <label for="h5">学校名称</label>
+                                    <input type="text" id="h5"/>
+                                </div>
+                                <div class="col-md-12 w2">
+                                    <label for="h1">采访人</label>
+                                    <select name="cars" id="h1">
+                                        <option value="李杀神">李杀神</option>
+                                        <option value="刘斩仙">刘斩仙</option>
+                                        <option value="王诛魔" selected="selected">王诛魔</option>
+                                        <option value="赵日天">赵日天</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-12 w2">
+                                    <label for="h2">被采访人</label>
+                                    <input type="text" id="h2"/>
+                                </div>
+                                <div class="col-md-12 w2">
+                                    <label for="h3">被采访人身份</label>
+                                    <select name="cars" id="h3">
+                                        <option value="学生">学生</option>
+                                        <option value="老师">老师</option>
+                                        <option value="学生家长">学生家长</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-12 w2">
+                                    <label for="h4">反馈内容</label>
+                            <textarea rows="10" cols="30" id="h4" style="width: 260px;height: 100px;max-width: 315px;max-height: 150px">
+                                说明由你来
+                            </textarea>
+                                </div>
+                                <div class="col-md-12 w2">
+                                    <div class="col-md-3  a2 Gl"></div>
+                                    <div class="col-md-2 col-md-offset-3 a2 Gl">
+                                        <button class="btn btn-default" id="add2">添加</button>
+                                    </div>
+                                    <div class="col-md-2 col-md-offset-2 a2 Gl">
+                                        <button class="btn btn-default" id="close4">取消</button>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 k1"></div>
+                            </div>
+                            <!---------------------------添加活动页面         -->
+                            <div class="col-md-8 col-md-offset-2 kk1 Gl">
+                                <div class="col-md-12 k">
+                                    <h3>添加活动</h3>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="col-md-12 w2">
+                                        <label class="j1"  for="j7">学校名称</label>
+                                        <input type="text" id="j7"/>
+                                    </div>
+                                    <div class="col-md-12 w2">
+                                        <label class="j1" for="j1">活动名称</label>
+                                        <input type="text" id="j1"/>
+                                    </div>
+                                    <div class="col-md-12 w2">
+                                        <label class="j1" for="j2">活动时间</label>
+                                        <input type="date"  id="j2"/>
+                                    </div>
+                                    <div class="col-md-12 w2">
+                                        <label class="j1" for="j3">活动地点</label>
+                                        <input type="text" id="j3"/>
+                                    </div>
+                                    <div class="col-md-12 w2">
+                                        <label class="j1" for="j4">主题</label>
+                                        <input type="text" id="j4"/>
+                                    </div>
+                                    <div class="col-md-12 w2">
+                                        <label class="j1" for="j5">负责部门</label>
+                                        <!--<select name="cars" id="j5">-->
+                                            <!--<option value="推广部">推广部</option>-->
+                                            <!--<option value="人事部">人事部</option>-->
+                                            <!--<option value="财务部" selected="selected">财务部</option>-->
+                                            <!--<option value="行政部">行政部</option>-->
+                                        <!--</select>-->
+                                        <input id="j5">
+                                    </div>
+                                    <div class="col-md-12 w2">
+                                        <label class="j1" for="j6">负 责 人</label>
+                                        <!--<select name="cars" id="j6">-->
+                                            <!--<option value="赵晓峰">赵晓峰</option>-->
+                                            <!--<option value="叶良辰">叶良辰</option>-->
+                                            <!--<option value="赵日天" selected="selected">赵日天</option>-->
+                                            <!--<option value="李斩魔">李斩魔</option>-->
+                                        <!--</select>-->
+                                        <input id="j6">
+                                    </div>
+                                    <div class="col-md-3  a1 Gl"></div>
+                                    <div class="col-md-2 col-md-offset-3 a1 Gl">
+                                        <button class="btn btn-default" id="add1">添加</button>
+                                    </div>
+                                    <div class="col-md-2 col-md-offset-2 a1 Gl">
+                                        <button class="btn btn-default" id="close1">取消</button>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 k1"></div>
+                            </div>
+                            <!--警告框-->
+                            <div id="myAlert" class="alert alert-danger alert_Gl" >
+                            <!-- <a href="#" class="close" data-dismiss="alert" >&times;</a><br>-->
+                            <strong class="txt_Gl text-center"></strong><br/>
+                            <!--     <button class="btn btn-info btn_lx">确定</button>-->
+                            </div>
+
+
+
+                        </div>
+                            <!--------------------------------->
+                    <div class="row" style="height: 30%;">
+                        <div class="col-12">
+                            <div class="ipad-with-video hidden-xs ">
+                                <img src="img/tu7998_8.jpg" alt=""/>
+                                <!--  <a href="https://www.youtube.com/embed/TzIhH_V2mEU?rel=0" data-width="100%" data-toggle="lightbox" class="video&#45;&#45;wrapper fresco" data-fresco-options="rel: 0">
+                                      <video width="598" height="290" controls="false" autoplay="autoplay" loop="true" >
+                                          <source src="https://webassets.desk.com/assets/videos/desk-overview-loop.mp4" type="video/mp4">
+                                          Sorry, this video is not supported.
+                                      </video>
+                                  </a>
+                              </div>-->
+                            </div>
+                        </div>
+                    </div>
+                            </div>
+                    <!-----------------right结束-------------------------------------->
+                </div>
+            </div>
+            <!-- ===============content结束===============-->
+        </div>
+    </div>
+</div>
+    </div>
+<script>
+ /*   $(".yes").click(function(){
+        window.location.href="index.html";
+    })
+    $(".list_1_lx").click(function(){
+        window.location.href="system.html";
+    });*/
+    $("#G_L_1").click(function(){
+        window.location.href="G_L1.html";
+    });
+    $("#G_L_2").click(function(){
+        window.location.href="G_L2.html";
+    });
+ /*   $(".W_Q").click(function(){
+        window.location.href="W_Q1.html";
+    });*/
+    $("#name_lx").text(localStorage.user);
+
+    //  系统信息
+    $("#xitong").on("click",function(){
+        $("#xitongxinxi").show();
+        $("#one").hide();
+        $("#two").hide();
+    })
+    //    显示隐藏information
+    $("#information1").on("click",function(){
+        $("#xitongxinxi").hide();
+        $("#one").show();
+        $("#two").hide();
+    })
+    $("#information2").on("click",function(){
+        $("#two").show();
+        $("#xitongxinxi").hide();
+        $("#one").hide();
+
+    })
+   // <!-- 查找的弹出框-->
+    $(".btn4").click(function(){
+        $(".tiankuang").show();
+    })
+    $(".btn10").click(function(){
+        $(".tiankuang2").show();
+    })
+
+ $('#modifymothertel').focus(function(){
+     $(this).next('span').css({display:'none'});
+     $(this).css({borderColor:"#26FFF3"})
+ })
+ $('#modifymothertel').blur(function(){
+     var modifymothertel=$('#modifymothertel').val();
+     var reg=/^1[34578]\d{9}$/;
+     inp8=reg.test(modifymothertel);
+     if(inp8){
+         $(this).css({borderColor:'green'});
+         $(this).next('span').css({color:'green',display:'inline-block'});
+         $(this).next('span').removeClass('glyphicon-remove');
+         $(this).next('span').addClass('glyphicon-ok');
+         $(this).next('span').attr('aria-hidden','true');
+         console.log('but');
+     }else{
+         $(this).css({borderColor:'red'});
+         $(this).next('span').removeClass('glyphicon-ok');
+         $(this).next('span').addClass('glyphicon-remove');
+         $(this).next('span').css({color:'red',display:'inline-block'});
+         $(this).next('span').attr('aria-hidden','false');
+         console.log('but');
+     }
+ });
+</script>
+<script src="js/fangfa_lx.js"></script>
+</body>
+</html>
